@@ -1,1 +1,1 @@
-# JS_Colleage_Exercise
+# JS_Exercise
