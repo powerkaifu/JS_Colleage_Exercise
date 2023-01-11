@@ -1,3 +1,20 @@
 body {
   font-family: "Noto Sans TC", sans-serif;
 }
+
+hr {
+  margin: 25px 0;
+}
+
+.container {
+  border: 1px solid #ddd;
+  border-radius: 1rem;
+  padding: 2rem 3rem;
+  margin: 5rem auto;
+  -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.list-group {
+  margin-bottom: 2rem;
+}
