@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>判斷座標是否在正方形的範圍內</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/bootstrap.css">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+  <div class="container">
+    <h1 class="text-center">判斷座標是否在正方形的範圍內</h1>
+    <h2>題目</h2>
+    <p>
+      在一個螢幕坐標系，有一正方形，長、寬均為100，且正方形左上角座標為(0,0)。<br>
+      請寫一支程式可以輸入「點」的座標，並判斷「點」是否在正方形的範圍內。<br>
+      如果「點」的位置剛好在邊界的話也算是在正方形範圍內(例：x=100，y=10)。<br><br>
+
+      輸入說明：<br>
+      每一組輸入有兩正整數字，分別代表X與Y座標。<br><br>
+      輸出說明：<br>
+      輸出此點座標在正方形範圍內(inside)或外(outside)。<br>
+    </p>
+
+    <hr>
+
+    <h2>輸入</h2>
+    x:<input id="input1" type="text" value="0"><br>
+    y:<input id="input2" type="text" value="0"><br>
+
+    <hr>
+
+    <h2>輸出</h2>
+    <div id="output"></div>
+    <script>
+      const input1 = document.querySelector('#input1')
+      const input2 = document.querySelector('#input2')
+      const output = document.querySelector('#output')
+      output.innerHTML = null
+
+      input1.addEventListener('change', changeHandler)
+      input2.addEventListener('change', changeHandler)
+      function changeHandler() {
+        let x = parseInt(input1.value)
+        let y = parseInt(input2.value)
+        let result = '';
+        if ((x >= 0 && x <= 100) && (y >= 0 && y <= 100)) {
+          result = "inside"
+        } else {
+          result = "outside"
+        }
+
+        output.innerHTML = result
+      }
+    </script>
+  </div>
+
+  <script src="./js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>

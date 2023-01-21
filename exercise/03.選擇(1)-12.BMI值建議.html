@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BMI值建議</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/bootstrap.css">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+  <div class="container">
+    <h1 class="text-center">BMI值建議</h1>
+    <h2>題目</h2>
+    <p>
+      輸入兩數分別代表身高(m)、體重(kg)，計算 BMI 值並判斷其為適中、過胖、過瘦，輸出 BMI 值與判斷的結果。<br><br>
+      BMI=體重/(身高*身高)。<br>
+      BMI &gt; 24：輸出"該減肥了喔!!"，<br>
+      BMI &lt; 18.5：輸出"太輕喔!!"<br>
+      否則輸出"標準喔!!"
+    </p>
+
+    <hr>
+
+    <h2>輸入</h2>
+    身高(m):<input id="input1" type="text" value="0"><br>
+    體重(kg):<input id="input2" type="text" value="0"><br>
+
+    <button id="submit">送出</button>
+    <hr>
+
+    <h2>輸出</h2>
+    <div id="output"></div>
+    <script>
+      const input1 = document.querySelector('#input1')
+      const input2 = document.querySelector('#input2')
+      const submit = document.querySelector('#submit')
+      const output = document.querySelector('#output')
+      output.innerHTML = null
+
+      submit.addEventListener('click', clickHandler)
+      function clickHandler() {
+        let h = parseFloat(input1.value)
+        let w = parseFloat(input2.value)
+        console.log(h, w)
+        let BMI = w / (h * h)
+        let result = '';
+
+        if (BMI > 24) {
+          result = '該減肥了喔!!'
+        } else if (BMI < 18.5) {
+          result = '太輕喔!!'
+        } else {
+          result = '標準喔!!'
+        }
+
+        output.innerHTML = `
+          BMI:${BMI}<br>
+          結果:${result}
+        `
+      }
+    </script>
+  </div>
+
+  <script src="./js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>

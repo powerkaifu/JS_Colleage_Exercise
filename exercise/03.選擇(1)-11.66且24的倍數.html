@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>兩數相加</title>
+  <title>66且24的倍數</title>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../css/bootstrap.css">
   <link rel="stylesheet" href="../css/style.css">
@@ -13,39 +13,37 @@
 
 <body>
   <div class="container">
-    <h1 class="text-center">兩數相加</h1>
+    <h1 class="text-center">66且24的倍數</h1>
     <h2>題目</h2>
-    <p>讓兩數相加 : 使用 prompt 輸入兩個整數，在畫面上輸出此兩整數的和。</p>
-    <p>以下為了練習方便測試。</p>
+    <p>輸入一整數，判斷是否為66的倍數且為24的倍數。若是則輸出1，否則輸出0。</p>
+
     <hr>
 
     <h2>輸入</h2>
-    數字一:<input id="input1" type="text" value="0"><br>
-    數字二:<input id="input2" type="text" value="0"><br>
+    數字:<input id="input1" type="text" value="0"><br>
 
     <hr>
 
     <h2>輸出</h2>
     <div id="output"></div>
-
     <script>
       const input1 = document.querySelector('#input1')
-      const input2 = document.querySelector('#input2')
       const output = document.querySelector('#output')
-      output.innerHTML = 0
+      output.innerHTML = null
 
       input1.addEventListener('change', changeHandler)
-      input2.addEventListener('change', changeHandler)
-      function changeHandler(e) {
-        let n1 = Number(input1.value)
-        let n2 = Number(input2.value)
-        let sum = n1 + n2
-        output.innerHTML = sum
+      function changeHandler() {
+        let n = parseInt(input1.value)
+        let result = '';
+
+        if (n % 24 === 0 && n % 66 === 0) {
+          result = 1
+        } else {
+          result = 0
+        }
+
+        output.innerHTML = result
       }
-
-
-
-
     </script>
   </div>
 

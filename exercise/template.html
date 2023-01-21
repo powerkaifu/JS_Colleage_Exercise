@@ -20,7 +20,7 @@
     <hr>
 
     <h2>輸入</h2>
-    長:<input id="input1" type="text" value="0"><br>
+    數字:<input id="input1" type="text" value="0"><br>
 
     <hr>
 
@@ -29,11 +29,13 @@
     <script>
       const input1 = document.querySelector('#input1')
       const output = document.querySelector('#output')
-      output.innerHTML = 0
+      output.innerHTML = null
 
       input1.addEventListener('change', changeHandler)
       function changeHandler() {
-        let result = input1.value
+        let n = parseInt(input1.value)
+        let result = '';
+
         output.innerHTML = result
       }
     </script>
