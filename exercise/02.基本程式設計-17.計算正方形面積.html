@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>立方體表面積</title>
+  <title>計算正方形面積</title>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../css/bootstrap.css">
   <link rel="stylesheet" href="../css/style.css">
@@ -13,12 +13,9 @@
 
 <body>
   <div class="container">
-    <h1 class="text-center">立方體表面積</h1>
+    <h1 class="text-center">計算正方形面積</h1>
     <h2>題目</h2>
-    <p>
-      輸入正立方體的邊長，輸出其表面積。(暗示：面積=6×邊長^2)<br>
-      例如:輸入 3 => 輸出 54
-    </p>
+    <p>請撰寫一個程式，其可計算正方形面積。輸入一個大於零的整數為正方形之邊長。</p>
 
     <hr>
 
@@ -29,23 +26,18 @@
 
     <h2>輸出</h2>
     <div id="output"></div>
-
-    <script>
-      const input1 = document.querySelector('#input1')
-      const output = document.querySelector('#output')
-      output.innerHTML = 0
-
-      input1.addEventListener('change', changeHandler)
-      function changeHandler() {
-        let n = input1.value
-        let result = n * n * 6
-        output.innerHTML = result
-      }
-
-    </script>
-
   </div>
+  <script>
+    const input1 = document.querySelector('#input1')
+    const output = document.querySelector('#output')
+    output.innerHTML = 0
 
+    input1.addEventListener('change', changeHandler)
+    function changeHandler() {
+      let n = parseInt(input1.value)
+      output.innerHTML = n * n
+    }
+  </script>
   <script src="./js/bootstrap.bundle.min.js"></script>
 
 </body>

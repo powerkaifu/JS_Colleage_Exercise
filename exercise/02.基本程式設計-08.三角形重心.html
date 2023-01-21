@@ -20,9 +20,46 @@
 
     <hr>
 
+    <h2>輸入</h2>
+    x_1:<input id="input1" type="text" value="19"><br>
+    y_1:<input id="input2" type="text" value="2"><br>
+    x_2:<input id="input3" type="text" value="15"><br>
+    y_2:<input id="input4" type="text" value="8"><br>
+    x_3:<input id="input5" type="text" value="15"><br>
+    y_3:<input id="input6" type="text" value="6"><br>
+    <br>
+    <button id="submit">送出</button>
+    <hr>
+
     <h2>輸出</h2>
+    <div id="output"></div>
+
     <script>
-      //  輸入 15 5 18 20 7 8 
+      //  輸入  19 2 15 8 15 6 
+      // (16.333333333333332,5.333333333333333)
+      const input1 = document.querySelector('#input1')
+      const input2 = document.querySelector('#input2')
+      const input3 = document.querySelector('#input3')
+      const input4 = document.querySelector('#input4')
+      const input5 = document.querySelector('#input5')
+      const input6 = document.querySelector('#input6')
+      const output = document.querySelector('#output')
+      const submit = document.querySelector('#submit')
+      output.innerHTML = 0
+
+      submit.addEventListener('click', clickHandler)
+      function clickHandler() {
+        let x_1 = Number(input1.value)
+        let y_1 = Number(input2.value)
+        let x_2 = Number(input3.value)
+        let y_2 = Number(input4.value)
+        let x_3 = Number(input5.value)
+        let y_3 = Number(input6.value)
+        let result = `
+         (${(x_1 + x_2 + x_3) / 3},${(y_1 + y_2 + y_3) / 3})
+        `
+        output.innerHTML = result
+      }
     </script>
   </div>
 

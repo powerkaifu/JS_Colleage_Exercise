@@ -20,9 +20,27 @@
     <p>(精確到小數點第二位)</p>
 
     <hr>
+    <h2>輸入</h2>
+    華氏溫度:<input id="input1" type="text" value="0"><br>
+
+    <hr>
 
     <h2>輸出</h2>
+    <div id="output"></div>
     <script>
+      const input1 = document.querySelector('#input1')
+      const output = document.querySelector('#output')
+      output.innerHTML = 0
+
+      input1.addEventListener('change', changeHandler)
+      function changeHandler() {
+        let F = Number(input1.value)
+        let C = (F - 32) * (5 / 9)
+        output.innerHTML = `
+        F=${F.toFixed(2)} <br>
+        C=${C.toFixed(2)}
+        `
+      }
     </script>
   </div>
 

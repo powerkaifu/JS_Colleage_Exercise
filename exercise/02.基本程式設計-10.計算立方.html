@@ -15,12 +15,26 @@
   <div class="container">
     <h1 class="text-center">計算立方</h1>
     <h2>題目</h2>
-    <p>輸入一整數n，計算立方，並輸出其結果。</p>
+    <p>輸入一整數 n，計算立方，並輸出其結果。</p>
+
+    <h2>輸入</h2>
+    n:<input id="input1" type="text" value="0"><br>
 
     <hr>
 
     <h2>輸出</h2>
+    <div id="output"></div>
     <script>
+      const input1 = document.querySelector('#input1')
+      const output = document.querySelector('#output')
+      output.innerHTML = 0
+
+      input1.addEventListener('change', changeHandler)
+      function changeHandler() {
+        let n = Number(input1.value)
+        let result = n * n * n
+        output.innerHTML = result
+      }
     </script>
   </div>
 

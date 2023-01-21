@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>立方體表面積</title>
+  <title>蝸牛爬竿子</title>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../css/bootstrap.css">
   <link rel="stylesheet" href="../css/style.css">
@@ -13,40 +13,36 @@
 
 <body>
   <div class="container">
-    <h1 class="text-center">立方體表面積</h1>
+    <h1 class="text-center">蝸牛爬竿子</h1>
     <h2>題目</h2>
-    <p>
-      輸入正立方體的邊長，輸出其表面積。(暗示：面積=6×邊長^2)<br>
-      例如:輸入 3 => 輸出 54
-    </p>
+    <p>蝸牛每天爬 a 公尺。</p>
+    <p>b 公尺的旗竿需幾天爬到桿頂？</p>
 
-    <hr>
 
     <h2>輸入</h2>
-    邊長:<input id="input1" type="text" value="0"><br>
-
+    蝸牛每天爬 a 公尺:<input id="input1" type="text" value="0"><br>
+    旗桿長度 b 公尺:<input id="input2" type="text" value="0"><br>
     <hr>
 
     <h2>輸出</h2>
     <div id="output"></div>
-
     <script>
       const input1 = document.querySelector('#input1')
+      const input2 = document.querySelector('#input2')
       const output = document.querySelector('#output')
       output.innerHTML = 0
 
       input1.addEventListener('change', changeHandler)
+      input2.addEventListener('change', changeHandler)
       function changeHandler() {
-        let n = input1.value
-        let result = n * n * 6
-        output.innerHTML = result
+        let a = parseInt(input1.value)
+        let b = parseInt(input2.value)
+        output.innerHTML = `
+          ${Math.ceil(b / a)} 天
+        `
       }
-
     </script>
-
-  </div>
-
-  <script src="./js/bootstrap.bundle.min.js"></script>
+    <script src="./js/bootstrap.bundle.min.js"></script>
 
 </body>
 

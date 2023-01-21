@@ -21,8 +21,28 @@
 
     <hr>
 
+    <h2>輸入</h2>
+    糖果總數:<input id="input1" type="text" value="0"><br>
+    吃掉數目:<input id="input2" type="text" value="0"><br>
+    <hr>
+
     <h2>輸出</h2>
+    <div id="output"></div>
     <script>
+      const input1 = document.querySelector('#input1')
+      const input2 = document.querySelector('#input2')
+      const output = document.querySelector('#output')
+      output.innerHTML = 0
+
+      input1.addEventListener('change', changeHandler)
+      input2.addEventListener('change', changeHandler)
+      function changeHandler() {
+        let n = input1.value
+        let m = input2.value
+        output.innerHTML = `
+         糖果有 ${n} 顆, 吃了 ${m} 顆，還剩 ${n - m} 顆
+        `
+      }
     </script>
   </div>
 

@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>平面幾何-中點公式</title>
+  <title>operators example</title>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../css/bootstrap.css">
   <link rel="stylesheet" href="../css/style.css">
@@ -13,18 +13,15 @@
 
 <body>
   <div class="container">
-    <h1 class="text-center">平面幾何-中點公式</h1>
+    <h1 class="text-center">operators example</h1>
     <h2>題目</h2>
-    <p>輸入2個點，輸出其中點。</p>
+    <p>請寫一個程式可以讀取兩個整數，並且輸出此兩個整數的加、減、乘、除、餘數的結果。</p>
 
     <hr>
 
-
     <h2>輸入</h2>
-    x1:<input id="input1" type="text" value="4"><br>
-    y1:<input id="input2" type="text" value="27"><br>
-    x2:<input id="input3" type="text" value="50"><br>
-    y2:<input id="input4" type="text" value="-23"><br>
+    數字1:<input id="input1" type="text" value="0"><br>
+    數字2:<input id="input2" type="text" value="0"><br>
     <br>
     <button id="submit">送出</button>
 
@@ -35,17 +32,22 @@
     <script>
       const input1 = document.querySelector('#input1')
       const input2 = document.querySelector('#input2')
-      const input3 = document.querySelector('#input3')
-      const input4 = document.querySelector('#input4')
       const output = document.querySelector('#output')
       const submit = document.querySelector('#submit')
       output.innerHTML = 0
 
       submit.addEventListener('click', clickHandler)
       function clickHandler() {
-        let x = (Number(input1.value) + Number(input3.value)) / 2
-        let y = (Number(input2.value) + Number(input4.value)) / 2
-        let result = `(${x.toFixed(1)},${y.toFixed(1)})`
+        let n1 = parseInt(input1.value)
+        let n2 = parseInt(input2.value)
+
+        let result = `
+          ${n1} + ${n2} = ${n1 + n2}<br>
+          ${n1} - ${n2} = ${n1 - n2}<br>
+          ${n1} * ${n2} = ${n1 * n2}<br>
+          ${n1} / ${n2} = ${Math.floor(n1 / n2)}<br>
+          ${n1} % ${n2} = ${n1 % n2}
+        `
         output.innerHTML = result
       }
     </script>

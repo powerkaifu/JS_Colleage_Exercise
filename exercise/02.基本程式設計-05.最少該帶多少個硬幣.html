@@ -21,22 +21,36 @@
 
     <hr>
 
+    <h2>輸入</h2>
+    輸入多少錢:<input id="input1" type="text" value="0"><br>
+
+    <hr>
+
     <h2>輸出</h2>
+    <div id="output"></div>
+
     <script>
-      let money = prompt("請輸入硬幣數目");
-      let d25 = Math.floor(money / 25)
-      let d10 = Math.floor(money % 25 / 10)
-      let d5 = Math.floor(money % 25 % 10 / 5)
-      let d3 = Math.floor(money % 25 % 10 % 5 / 3)
-      let d1 = Math.floor(money % 25 % 10 % 5 % 3)
+      const input1 = document.querySelector('#input1')
+      const output = document.querySelector('#output')
+      output.innerHTML = 0
 
-      document.write(`總共 ${money} 元可以換成以下硬幣:<br><br>`)
-      document.write(`25元: ${d25} 個<br>`)
-      document.write(`10元: ${d10} 個<br>`)
-      document.write(`5元: ${d5} 個<br>`)
-      document.write(`3元: ${d3} 個<br>`)
-      document.write(`1元: ${d1} 個`)
-
+      input1.addEventListener('change', changeHandler)
+      function changeHandler() {
+        let money = input1.value
+        let d25 = Math.floor(money / 25)
+        let d10 = Math.floor(money % 25 / 10)
+        let d5 = Math.floor(money % 25 % 10 / 5)
+        let d3 = Math.floor(money % 25 % 10 % 5 / 3)
+        let d1 = Math.floor(money % 25 % 10 % 5 % 3)
+        output.innerHTML = `
+        ${money} 元可以換成以下硬幣:<br><br>
+        25元: ${d25} 個<br>
+        10元: ${d10} 個<br>
+        5元: ${d5} 個<br>
+        3元: ${d3} 個<br>
+        1元: ${d1} 個
+        `
+      }
     </script>
   </div>
 

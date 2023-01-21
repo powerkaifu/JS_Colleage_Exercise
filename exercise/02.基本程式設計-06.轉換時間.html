@@ -17,17 +17,33 @@
     <h2>題目</h2>
     <p>試設計一程式，讓使用者輸入一整數值（代表總秒數），輸出總共是幾天？幾小時？幾分？幾秒？</p>
 
+    <h2>輸入</h2>
+    請輸入總秒數:<input id="input1" type="text" value="0"><br>
+
     <hr>
 
     <h2>輸出</h2>
+    <div id="output"></div>
+
     <script>
-      let total = prompt('請輸入總秒數')
-      let d = Math.floor(total / (60 * 60 * 24))
-      let h = Math.floor(total / 60 / 60 % 24)
-      let m = Math.floor(total / 60 % 60)
-      let s = Math.floor(total % 60 % 60)
-      document.write(`你輸入的總秒數是 ${total} <br>`)
-      document.write(`${d} 天 ${h} 時 ${m} 分 ${s} 秒`)
+      const input1 = document.querySelector('#input1')
+      const output = document.querySelector('#output')
+      output.innerHTML = 0
+
+      input1.addEventListener('change', changeHandler)
+      function changeHandler() {
+        let total = Number(input1.value)
+        let d = Math.floor(total / (60 * 60 * 24))
+        let h = Math.floor(total / 60 / 60 % 24)
+        let m = Math.floor(total / 60 % 60)
+        let s = Math.floor(total % 60 % 60)
+        output.innerHTML = `
+          你輸入 ${total} 秒<br>
+          可以換算成 ${d} 天 ${h} 時 ${m} 分 ${s} 秒
+        `
+      }
+
+
     </script>
   </div>
 

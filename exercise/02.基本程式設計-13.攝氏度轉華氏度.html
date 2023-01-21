@@ -16,13 +16,29 @@
     <h1 class="text-center">攝氏度轉華氏度</h1>
     <h2>題目</h2>
     <p>輸入攝氏溫度(C)，輸出華氏溫度(F)。</p>
-    <p>公式： F=C*(9/5)+32</p>
+    <p>公式： F=(C*9/5)+32</p>
     <p>(小數部分請無條件捨去)</p>
 
     <hr>
 
+    <h2>輸入</h2>
+    攝氏溫度:<input id="input1" type="text" value="0"><br>
+
+    <hr>
+
     <h2>輸出</h2>
+    <div id="output"></div>
+
     <script>
+      const input1 = document.querySelector('#input1')
+      const output = document.querySelector('#output')
+      output.innerHTML = 0
+
+      input1.addEventListener('change', changeHandler)
+      function changeHandler() {
+        let C = input1.value
+        output.innerHTML = (C * 9 / 5) + 32
+      }
     </script>
   </div>
 
