@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>計算時間的組合</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/bootstrap.css">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+  <div class="container">
+    <h1 class="text-center">計算時間的組合</h1>
+    <h2>題目</h2>
+    <p>
+      寫一程式要求使用者輸入代表秒數的整數值，<br>
+      並且經計算以天數、小時數、分鐘數、與秒數的組合來顯示對等的時間值。<br>
+      請使用符號常數表示一天內的小時數；一小時內的分鐘數，以及一分鐘內的秒數。<br><br>
+
+      輸入說明：<br>
+      輸入秒數。<br><br>
+
+      輸出說明：<br>
+      輸出天數，時數，分數，秒數。
+    </p>
+
+    <hr>
+
+    <h2>輸入</h2>
+    數字:<input id="input1" type="text" value="0"><br>
+
+    <hr>
+
+    <h2>輸出</h2>
+    <div id="output"></div>
+    <script>
+      const input1 = document.querySelector('#input1')
+      const output = document.querySelector('#output')
+      output.innerHTML = null
+
+      input1.addEventListener('change', changeHandler)
+      function changeHandler() {
+        let n = parseInt(input1.value)
+        let result = '';
+
+        output.innerHTML = result
+      }
+    </script>
+  </div>
+
+  <script src="./js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>

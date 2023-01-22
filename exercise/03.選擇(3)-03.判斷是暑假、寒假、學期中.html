@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>判斷是暑假、寒假、學期中 switch...case 版本</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/bootstrap.css">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+  <div class="container">
+    <h1 class="text-center">判斷是暑假、寒假、學期中 switch...case 版本</h1>
+    <h2>題目</h2>
+    <p>輸入一整數代表月份(1~12)，判斷是暑假(Summer vacation)、寒假(Winter vacation)、還是學期中(In the semester)，並輸出結果。1、2輸出"寒假"，7、8輸出"暑假"，其他月份輸出"學期中"。不在範圍內輸出"輸入錯誤"。</p>
+
+    <hr>
+
+    <h2>輸入</h2>
+    數字:<input id="input1" type="text" value="0"><br>
+
+    <hr>
+
+    <h2>輸出</h2>
+    <div id="output"></div>
+    <script>
+      const input1 = document.querySelector('#input1')
+      const output = document.querySelector('#output')
+      output.innerHTML = null
+
+      input1.addEventListener('change', changeHandler)
+      function changeHandler() {
+        let n = parseInt(input1.value)
+        let result = '';
+        switch (n) {
+          case 1:
+          case 2:
+            result = '寒假'
+            break;
+          case 7:
+          case 8:
+            result = '暑假'
+            break;
+          case 3:
+          case 4:
+          case 5:
+          case 6:
+          case 9:
+          case 10:
+          case 11:
+          case 12:
+            result = '學期中'
+            break;
+          default:
+            result = '輸入錯誤'
+            break;
+        }
+
+        output.innerHTML = result
+      }
+    </script>
+  </div>
+
+  <script src="./js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>

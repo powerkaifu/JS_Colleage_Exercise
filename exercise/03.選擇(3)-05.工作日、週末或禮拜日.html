@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>工作日、週末或禮拜日 switch...case 版本</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/bootstrap.css">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+  <div class="container">
+    <h1 class="text-center">工作日、週末或禮拜日 switch...case 版本</h1>
+    <h2>題目</h2>
+    <p>輸入一整數代表星期幾，輸出其為工作日(1~5)、週末(6)或禮拜日(7)。不在範圍內請輸出"輸入錯誤"。</p>
+
+    <hr>
+
+    <h2>輸入</h2>
+    數字:<input id="input1" type="text" value="0"><br>
+
+    <hr>
+
+    <h2>輸出</h2>
+    <div id="output"></div>
+    <script>
+      const input1 = document.querySelector('#input1')
+      const output = document.querySelector('#output')
+      output.innerHTML = null
+
+      input1.addEventListener('change', changeHandler)
+      function changeHandler() {
+        let n = parseInt(input1.value)
+        let result = '';
+        switch (n) {
+          case 1:
+          case 2:
+          case 3:
+          case 4:
+          case 5:
+            result = '工作日'
+            break;
+          case 6:
+            result = '週末'
+            break;
+          case 7:
+            result = '禮拜日'
+            break;
+          default:
+            result = '輸入錯誤'
+            break;
+        }
+
+        output.innerHTML = result
+      }
+    </script>
+  </div>
+
+  <script src="./js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>

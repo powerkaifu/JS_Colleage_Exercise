@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>以法文寫數字(0~9) switch...case 版本</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/bootstrap.css">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+  <div class="container">
+    <h1 class="text-center">以法文寫數字(0~9) switch...case 版本</h1>
+    <h2>題目</h2>
+    <p>
+      輸入一整數(0~9)，以法文寫數字輸出。若不再範圍內輸出"Input Error"。<br>
+      法文的0為: zero<br>
+      法文的1為: un<br>
+      法文的2為: deux<br>
+      法文的3為: trois<br>
+      法文的4為: quatre<br>
+      法文的5為: cinq<br>
+      法文的6為: six<br>
+      法文的7為: sept<br>
+      法文的8為: huit<br>
+      法文的9為: neuf<br>
+    </p>
+
+    <hr>
+
+    <h2>輸入</h2>
+    數字:<input id="input1" type="text" value="0"><br>
+
+    <hr>
+
+    <h2>輸出</h2>
+    <div id="output"></div>
+    <script>
+      const input1 = document.querySelector('#input1')
+      const output = document.querySelector('#output')
+      output.innerHTML = null
+
+      input1.addEventListener('change', changeHandler)
+      function changeHandler() {
+        let n = parseInt(input1.value)
+        let result = '';
+
+        switch (n) {
+          case 0:
+            result = 'zero'
+            break;
+          case 1:
+            result = 'un'
+            break;
+          case 2:
+            result = 'deux'
+            break;
+          case 3:
+            result = 'trois'
+            break;
+          case 4:
+            result = 'quatre'
+            break;
+          case 5:
+            result = 'cinq'
+            break;
+          case 6:
+            result = 'six'
+            break;
+          case 7:
+            result = 'sept'
+            break;
+          case 8:
+            result = 'huit'
+            break;
+          case 9:
+            result = 'neuf'
+            break;
+          default:
+            result = 'Input Error'
+            break;
+        }
+
+        output.innerHTML = result
+      }
+    </script>
+  </div>
+
+  <script src="./js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>

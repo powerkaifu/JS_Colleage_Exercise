@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>判斷其12生肖 switch...case 版本</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/bootstrap.css">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+  <div class="container">
+    <h1 class="text-center">判斷其12生肖 switch...case 版本</h1>
+    <h2>題目</h2>
+    <p>
+      輸入一整數(1~12)，判斷其代表的12生肖，並輸出其結果。<br>
+      1~12 依序為:<br><br>
+      鼠(mouse)<br>
+      牛(cow)<br>
+      虎(tiger)<br>
+      兔(rabbit)<br>
+      龍(dragon)<br>
+      蛇(snake)<br>
+      馬(horse)<br>
+      羊(sheep)<br>
+      猴(monkey)<br>
+      雞(chicken)<br>
+      狗(dog)<br>
+      豬(pig)<br><br>
+      不在範圍內輸出"輸入錯誤"。
+    </p>
+
+    <hr>
+
+    <h2>輸入</h2>
+    數字:<input id="input1" type="text" value="0"><br>
+
+    <hr>
+
+    <h2>輸出</h2>
+    <div id="output"></div>
+    <script>
+      const input1 = document.querySelector('#input1')
+      const output = document.querySelector('#output')
+      output.innerHTML = null
+
+      input1.addEventListener('change', changeHandler)
+      function changeHandler() {
+        let n = parseInt(input1.value)
+        let result = '';
+        switch (n) {
+          case 1:
+            result = '鼠'
+            break;
+          case 2:
+            result = '牛'
+            break;
+          case 3:
+            result = '虎'
+            break;
+          case 4:
+            result = '兔'
+            break;
+          case 5:
+            result = '龍'
+            break;
+          case 6:
+            result = '蛇'
+            break;
+          case 7:
+            result = '馬'
+            break;
+          case 8:
+            result = '羊'
+            break;
+          case 9:
+            result = '猴'
+            break;
+          case 10:
+            result = '雞'
+            break;
+          case 11:
+            result = '狗'
+            break;
+          case 12:
+            result = '豬'
+            break;
+          default:
+            result = '輸入錯誤'
+            break;
+        }
+        output.innerHTML = result
+      }
+    </script>
+  </div>
+
+  <script src="./js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>

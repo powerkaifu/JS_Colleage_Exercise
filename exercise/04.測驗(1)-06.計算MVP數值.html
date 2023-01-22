@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>課後練習</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/bootstrap.css">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+  <div class="container">
+    <h1 class="text-center"></h1>
+    <h2>題目</h2>
+    <p>
+      試寫一個程式，讓使用者可以輸入籃球員的平均得分，籃板，助攻及抄截、失誤等數值。並依(得分*1＋助攻*2＋籃板*2＋抄截*2)－(失誤*2)的公式取得此籃球員MVP數值。大於45分以上為A級球員，35～44分為B級球員，25～34之間為C級球員，低於25分為D級球員。<br><br>
+
+      輸入說明：<br>
+      每一組需要輸入五個正整數，依序分別代表：平均得分、籃板數、<br>
+      助攻數、抄截數、失誤數。<br><br>
+
+      輸出說明：<br>
+      以MVP數值對應球員等級。<br>
+
+    <table class="table table-striped">
+      <tr>
+        <td>輸入範例:</td>
+        <td>輸出範例:</td>
+      </tr>
+      <tr>
+        <td>20 12 15 6 3</td>
+        <td>A</td>
+      </tr>
+    </table>
+
+    </p>
+
+    <hr>
+
+    <h2>輸入</h2>
+    數字:<input id="input1" type="text" value="0"><br>
+
+    <hr>
+
+    <h2>輸出</h2>
+    <div id="output"></div>
+    <script>
+      const input1 = document.querySelector('#input1')
+      const output = document.querySelector('#output')
+      output.innerHTML = null
+
+      input1.addEventListener('change', changeHandler)
+      function changeHandler() {
+        let n = parseInt(input1.value)
+        let result = '';
+
+        output.innerHTML = result
+      }
+    </script>
+  </div>
+
+  <script src="./js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>
