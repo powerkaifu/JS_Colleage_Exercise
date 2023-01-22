@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>三整數找出最大者</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/bootstrap.css">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+  <div class="container">
+    <h1 class="text-center">三整數找出最大者</h1>
+    <h2>題目</h2>
+    <p>請在螢幕上輸入三整數，找出最大者，並輸出其結果。</p>
+
+    <hr>
+
+    <h2>輸入</h2>
+    數字1:<input id="input1" type="text" value="0"><br>
+    數字2:<input id="input2" type="text" value="0"><br>
+    數字3:<input id="input3" type="text" value="0"><br>
+
+    <hr>
+
+    <h2>輸出</h2>
+    <div id="output"></div>
+    <script>
+      const input1 = document.querySelector('#input1')
+      const input2 = document.querySelector('#input2')
+      const input3 = document.querySelector('#input3')
+
+      const output = document.querySelector('#output')
+      output.innerHTML = null
+
+      input1.addEventListener('change', changeHandler)
+      input2.addEventListener('change', changeHandler)
+      input3.addEventListener('change', changeHandler)
+
+      function changeHandler() {
+        let a = parseInt(input1.value)
+        let b = parseInt(input2.value)
+        let c = parseInt(input3.value)
+        let tmp = 0
+
+        if (a > b) {
+          tmp = a
+          a = b
+          b = tmp
+        }
+
+        if (a > c) {
+          tmp = a
+          a = c
+          c = tmp
+        }
+
+        if (b > c) {
+          tmp = b
+          b = c
+          c = tmp
+        }
+        console.log(a, b, c)
+        output.innerHTML = c
+      }
+
+      // 驗證 => 30 20 10
+      // a>b => 20 30 10
+      // a>c => 10 30 20
+      // b>c => 10 20 30
+    </script>
+  </div>
+
+  <script src="./js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>

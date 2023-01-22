@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>星座查詢</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/bootstrap.css">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+  <div class="container">
+    <h1 class="text-center">星座查詢</h1>
+    <h2>題目</h2>
+    <p>
+      星座查詢有 " 水瓶 "," 雙魚 "," 牡羊 "," 金牛 " ," 雙子 "," 巨蟹 "," 獅子 "," 處女 " ," 天秤 "," 天蠍 "," 射手 "," 摩羯 "; 請設計程式，根據輸入之月及日期，輸出對應之星座輸出。<br>
+      1 月 21 日 1997 年 2 月 18 日 水瓶 Aquarius<br>
+      2 月 19 日 1997 年 3 月 20 日 雙魚 Pisces<br>
+      3 月 21 日 1997 年 4 月 20 日 牡羊 Aries<br>
+      4 月 21 日 1997 年 5 月 21 日 金牛 Taurus<br>
+      5 月 22 日 1997 年 6 月 21 日 雙子 Gemini<br>
+      6 月 22 日 1997 年 7 月 22 日 巨蟹 Cancer<br>
+      7 月 23 日 1997 年 8 月 23 日 獅子 Leo<br>
+      8 月 24 日 1997 年 9 月 23 日 處女 Virgo<br>
+      9 月 24 日 1997 年 10 月 23 日 天秤 Libra<br>
+      10 月 24 日 1997 年 11 月 22 日 天蠍 Scorpio<br>
+      11 月 23 日 1997 年 12 月 21 日 射手 Sagittarius<br>
+      12 月 22 日 1998 年 1 月 20 日 摩羯 Capricorn<br><br>
+
+      輸入說明：<br>
+      請輸入月及日期。<br><br>
+
+      輸出說明：<br>
+      輸出對應的星座
+    </p>
+
+    <hr>
+
+    <h2>輸入</h2>
+    月份:<input id="input1" type="text" value="0"><br>
+    日期:<input id="input2" type="text" value="0"><br>
+
+    <hr>
+
+    <h2>輸出</h2>
+    <div id="output"></div>
+    <script>
+      const input1 = document.querySelector('#input1')
+      const input2 = document.querySelector('#input2')
+      const output = document.querySelector('#output')
+      output.innerHTML = null
+
+      input1.addEventListener('change', changeHandler)
+      input2.addEventListener('change', changeHandler)
+
+      function changeHandler() {
+        let m = parseInt(input1.value)
+        let d = parseInt(input2.value)
+
+        let result = '';
+        if ((m == 1 && d >= 21) || (m == 2 && d <= 18)) result = '水瓶座'
+        if ((m == 2 && d >= 19) || (m == 3 && d <= 20)) result = '雙魚座'
+        if ((m == 3 && d >= 21) || (m == 4 && d <= 20)) result = '牡羊座'
+        if ((m == 4 && d >= 21) || (m == 5 && d <= 21)) result = '金牛座'
+        if ((m == 5 && d >= 22) || (m == 6 && d <= 21)) result = '雙子座'
+        if ((m == 6 && d >= 22) || (m == 7 && d <= 22)) result = '巨蟹座'
+        if ((m == 7 && d >= 23) || (m == 8 && d <= 23)) result = '獅子座'
+        if ((m == 8 && d >= 24) || (m == 9 && d <= 23)) result = '處女座'
+        if ((m == 9 && d >= 24) || (m == 10 && d <= 23)) result = '天秤座'
+        if ((m == 10 && d >= 24) || (m == 11 && d <= 22)) result = '天蠍座'
+        if ((m == 11 && d >= 23) || (m == 12 && d <= 21)) result = '射手座'
+        if ((m == 12 && d >= 22) || (m == 1 && d <= 20)) result = '摩羯座'
+        if ((m <= 0 || m > 12) || (d <= 0 || d > 31)) result = '請輸入正確月份、日期'
+        output.innerHTML = result
+      }
+    </script>
+  </div>
+
+  <script src="./js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>
