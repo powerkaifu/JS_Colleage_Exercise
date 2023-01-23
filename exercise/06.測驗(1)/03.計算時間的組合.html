@@ -30,7 +30,7 @@
     <hr>
 
     <h2>輸入</h2>
-    數字:<input id="input1" type="text" value="0"><br>
+    總秒數:<input id="input1" type="text" value="0"><br>
 
     <hr>
 
@@ -43,9 +43,21 @@
 
       input1.addEventListener('change', changeHandler)
       function changeHandler() {
-        let n = parseInt(input1.value)
-        let result = '';
+        let restSec = parseInt(input1.value)
+        let days = Math.floor(restSec / (60 * 60 * 24))
+        restSec = restSec % (60 * 60 * 24)
+        let hours = Math.floor(restSec / (60 * 60))
+        restSec = restSec % (60 * 60)
+        let mins = Math.floor(restSec / 60)
+        restSec = Math.floor(restSec % 60)
+        let secs = restSec
 
+        let result = `
+          ${days} 天 <br>
+          ${hours} 時 <br>
+          ${mins} 分 <br>
+          ${secs} 秒 <br>
+        `
         output.innerHTML = result
       }
     </script>

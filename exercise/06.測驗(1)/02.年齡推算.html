@@ -16,15 +16,20 @@
     <h1 class="text-center">年齡推算</h1>
     <h2>題目</h2>
     <p>
-      饅頭之家住了大綠、小綠、阿藍、阿紫等四個人，其中大綠是小綠的姐姐，而且比她大三歲，阿藍則是比小綠年齡的兩倍少五歲，而阿紫年齡的十位數和阿藍相同、個位數和大綠相同。已知小綠的年齡，你能推算出阿紫是幾歲嗎？<br><br>
+      饅頭之家住了大綠、小綠、阿藍、阿紫等四個人，<br>
+      其中大綠是小綠的姐姐，而且比她大三歲，<br>
+      阿藍則是比小綠年齡的兩倍少五歲，<br>
+      而阿紫年齡的十位數和阿藍相同、個位數和大綠相同。<br>
+      已知小綠的年齡，你能推算出阿紫是幾歲嗎？<br><br>
 
-      輸入一個正整數，代表小綠的年齡。請輸出阿紫是幾歲。<br>
+      輸入一個正整數，代表小綠的年齡。<br>
+      請輸出阿紫是幾歲。<br>
     </p>
 
     <hr>
 
     <h2>輸入</h2>
-    數字:<input id="input1" type="text" value="0"><br>
+    小綠年齡:<input id="input1" type="text" value="0"><br>
 
     <hr>
 
@@ -37,10 +42,13 @@
 
       input1.addEventListener('change', changeHandler)
       function changeHandler() {
-        let n = parseInt(input1.value)
-        let result = '';
-
-        output.innerHTML = result
+        let smallGreen = parseInt(input1.value)
+        let bigGreen = smallGreen + 3
+        let blue = smallGreen * 2 - 5
+        let a = Math.floor(blue / 10)
+        let b = bigGreen % 10
+        let purple = a * 10 + b
+        output.innerHTML = purple
       }
     </script>
   </div>

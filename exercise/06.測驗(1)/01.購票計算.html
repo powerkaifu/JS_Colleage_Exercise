@@ -29,7 +29,7 @@
     <hr>
 
     <h2>輸入</h2>
-    數字:<input id="input1" type="text" value="0"><br>
+    金錢:<input id="input1" type="text" value="0"><br>
 
     <hr>
 
@@ -44,7 +44,17 @@
       function changeHandler() {
         let n = parseInt(input1.value)
         let result = '';
+        let d10 = Math.floor(n / 10)
+        n = n % 10
+        let d5 = Math.floor(n / 5)
+        n = n % 5
+        let d1 = n
 
+        result = `
+          10元: ${d10} 個<br>
+          5元: ${d5} 個<br>
+          1元: ${d1} 個
+        `
         output.innerHTML = result
       }
     </script>

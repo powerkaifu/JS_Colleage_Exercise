@@ -17,8 +17,11 @@
     <h2>題目</h2>
     <p>小明參加今年度的升學考試，請你協助他落點分析。<br>
       輸入說明:<br>
-      輸入共有四筆整數，前三筆整數表示第一志願(First Choice)、第二志願(Second Choice)、<br>
-      以及第三志願(Third Choice)學校招生人數，第四個整數表示小明本次測驗的名次。<br><br>
+      輸入共有四筆整數，前三筆整數表示:<br>
+      第一志願(First Choice)，<br>
+      第二志願(Second Choice)，<br>
+      以及第三志願(Third Choice)學校招生人數，<br>
+      第四個整數表示小明本次測驗的名次。<br><br>
 
       輸出說明:<br>
       請根據小明測驗的名次，輸出其錄取的志願，若無法錄取前三志願，則輸出其他志願(Others Choice)<br><br>
@@ -33,13 +36,17 @@
       123 234 345 983<br><br>
 
       輸出範例:<br>
-      Others Choice
+      其他志願(Others Choice)
     </p>
 
     <hr>
 
     <h2>輸入</h2>
-    數字:<input id="input1" type="text" value="0"><br>
+    第一志願:<input id="input1" type="text" value="0"><br>
+    第二志願:<input id="input2" type="text" value="0"><br>
+    第三志願:<input id="input3" type="text" value="0"><br>
+    小明名次:<input id="input4" type="text" value="0"><br>
+    <button id="submit">送出</button>
 
     <hr>
 
@@ -47,13 +54,31 @@
     <div id="output"></div>
     <script>
       const input1 = document.querySelector('#input1')
+      const input2 = document.querySelector('#input2')
+      const input3 = document.querySelector('#input3')
+      const input4 = document.querySelector('#input4')
+      const submit = document.querySelector('#submit')
+
       const output = document.querySelector('#output')
       output.innerHTML = null
 
-      input1.addEventListener('change', changeHandler)
-      function changeHandler() {
-        let n = parseInt(input1.value)
+      submit.addEventListener('click', clickHandler)
+      function clickHandler() {
+        let n1 = parseInt(input1.value)
+        let n2 = parseInt(input2.value)
+        let n3 = parseInt(input3.value)
+        let ming = parseInt(input4.value)
         let result = '';
+
+        if (ming < n1) {
+          result = '第一志願'
+        } else if (ming - n1 < n2) {
+          result = '第二志願'
+        } else if (ming - n1 - n2 < n3) {
+          result = '第三志願'
+        } else {
+          result = '其他志願'
+        }
 
         output.innerHTML = result
       }

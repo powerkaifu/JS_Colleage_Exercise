@@ -16,20 +16,20 @@
     <h1 class="text-center">相遇時間計算</h1>
     <h2>題目</h2>
     <p>
-      假設你步行的速度為每秒1公尺，而你朋友小華在你前方，步行的速度則為每秒30英吋，<br>
+      假設你步行的速度為每秒 1 公尺，而你朋友小華在你前方，步行的速度則為每秒 30 英吋，<br>
       然而你需要幾秒鐘才能超越小華呢? (1英吋=2.54公分)。<br><br>
 
       輸入說明：<br>
-      輸入兩人距離公尺數(int)。<br><br>
+      輸入兩人距離公尺數。<br><br>
 
       輸出說明：<br>
-      輸出第幾秒超越，秒數取整數(int)，無條件進入法。<br>
+      輸出第幾秒超越，秒數取整數，無條件進入法。<br>
     </p>
 
     <hr>
 
     <h2>輸入</h2>
-    數字:<input id="input1" type="text" value="0"><br>
+    距離公尺數:<input id="input1" type="text" value="0"><br>
 
     <hr>
 
@@ -42,8 +42,11 @@
 
       input1.addEventListener('change', changeHandler)
       function changeHandler() {
-        let n = parseInt(input1.value)
-        let result = '';
+        let distance = parseInt(input1.value)
+        let hua = 30 * 2.54
+        let diff = 100 - hua
+        let totalSec = Math.ceil((distance * 100) / diff)
+        let result = totalSec;
 
         output.innerHTML = result
       }

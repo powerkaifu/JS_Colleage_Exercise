@@ -16,24 +16,30 @@
     <h1 class="text-center"></h1>
     <h2>題目</h2>
     <p>
-      試寫一個程式，讓使用者可以輸入籃球員的平均得分，籃板，助攻及抄截、失誤等數值。並依(得分*1＋助攻*2＋籃板*2＋抄截*2)－(失誤*2)的公式取得此籃球員MVP數值。大於45分以上為A級球員，35～44分為B級球員，25～34之間為C級球員，低於25分為D級球員。<br><br>
+      試寫一個程式，讓使用者可以輸入籃球員的平均得分，籃板，助攻及抄截、失誤等數值。<br>
+      並依 (得分*1＋助攻*2＋籃板*2＋抄截*2)－(失誤*2) 的公式取得此籃球員 MVP 數值。<br>
+      大於 45 分以上為 A 級球員，35～44 分為 B 級球員，25～34 之間為C級球員，低於 25 分為 D 級球員。<br><br>
 
       輸入說明：<br>
-      每一組需要輸入五個正整數，依序分別代表：平均得分、籃板數、<br>
-      助攻數、抄截數、失誤數。<br><br>
+      每一組需要輸入五個正整數，依序分別代表：平均得分、籃板數、助攻數、抄截數、失誤數。<br><br>
 
       輸出說明：<br>
       以MVP數值對應球員等級。<br>
 
     <table class="table table-striped">
       <tr>
-        <td>輸入範例:</td>
-        <td>輸出範例:</td>
+        <th>輸入範例:</th>
+        <th>輸出範例:</th>
       </tr>
       <tr>
         <td>20 12 15 6 3</td>
         <td>A</td>
       </tr>
+      <tr>
+        <td>30 12 12 4 47</td>
+        <td>D</td>
+      </tr>
+
     </table>
 
     </p>
@@ -41,7 +47,12 @@
     <hr>
 
     <h2>輸入</h2>
-    數字:<input id="input1" type="text" value="0"><br>
+    平均分:<input id="input1" type="text" value="0"><br>
+    籃板數:<input id="input2" type="text" value="0"><br>
+    助攻數:<input id="input3" type="text" value="0"><br>
+    抄截數:<input id="input4" type="text" value="0"><br>
+    失誤數:<input id="input5" type="text" value="0"><br>
+    <button id="submit">送出</button>
 
     <hr>
 
@@ -49,13 +60,34 @@
     <div id="output"></div>
     <script>
       const input1 = document.querySelector('#input1')
+      const input2 = document.querySelector('#input2')
+      const input3 = document.querySelector('#input3')
+      const input4 = document.querySelector('#input4')
+      const input5 = document.querySelector('#input5')
+      const submit = document.querySelector('#submit')
+
       const output = document.querySelector('#output')
       output.innerHTML = null
 
-      input1.addEventListener('change', changeHandler)
-      function changeHandler() {
-        let n = parseInt(input1.value)
+      submit.addEventListener('click', clickHandler)
+      function clickHandler() {
         let result = '';
+        let n1 = parseInt(input1.value)
+        let n2 = parseInt(input2.value)
+        let n3 = parseInt(input3.value)
+        let n4 = parseInt(input4.value)
+        let n5 = parseInt(input5.value)
+        let score = (n1 * 1 + n2 * 2 + n3 * 2 + n4 * 2) - (n5 * 2)
+
+        if (score >= 45) {
+          result = 'A 級球員'
+        } else if (score >= 35) {
+          result = 'B 級球員'
+        } else if (score >= 25) {
+          result = 'C 級球員'
+        } else {
+          result = 'D 級球員'
+        }
 
         output.innerHTML = result
       }
