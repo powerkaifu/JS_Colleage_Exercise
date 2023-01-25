@@ -8,7 +8,8 @@
   <title>年月日算第幾天</title>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../../css/bootstrap.css">
-  <link rel="stylesheet" href="../../css/style.css">
+  <link rel="stylesheet" href="../../css/layout.css">
+  <link rel="stylesheet" href="../../css/question.css">
 </head>
 
 <body>
@@ -23,23 +24,59 @@
     <hr>
 
     <h2>輸入</h2>
-    數字:<input id="input1" type="text" value="0"><br>
-
+    年:<input id="input1" type="text" value="0"><br>
+    月:<input id="input2" type="text" value="0"><br>
+    日:<input id="input3" type="text" value="0"><br>
+    <br>
+    <button id="submit">送出</button>
     <hr>
 
     <h2>輸出</h2>
     <div id="output"></div>
     <script>
       const input1 = document.querySelector('#input1')
+      const input2 = document.querySelector('#input2')
+      const input3 = document.querySelector('#input3')
       const output = document.querySelector('#output')
+      const submit = document.querySelector('#submit')
       output.innerHTML = null
 
-      input1.addEventListener('change', changeHandler)
-      function changeHandler() {
-        let n = parseInt(input1.value)
-        let result = '';
+      submit.addEventListener('click', clickHandler)
+      function clickHandler() {
+        let y = parseInt(input1.value)
+        let m = parseInt(input2.value)
+        let d = parseInt(input3.value)
+        let result = 0;
 
-        output.innerHTML = result
+        for (let i = 1; i < m; i++) {
+          switch (i) {
+            // 大月
+            case 1:
+            case 3:
+            case 5:
+            case 7:
+            case 8:
+            case 10:
+            case 12:
+              result += 31
+              break
+            // 小月
+            case 4:
+            case 6:
+            case 9:
+            case 11:
+              result += 30
+              break
+            // 閏月
+            case 2:
+              if ((y % 4 === 0 && y % 100 !== 0) || y % 400 === 0) {
+                result += 29
+              } else {
+                result += 28
+              }
+          }
+        }
+        output.innerHTML = result + d
       }
     </script>
   </div>

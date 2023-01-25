@@ -8,14 +8,15 @@
   <title>撕破布比賽</title>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../../css/bootstrap.css">
-  <link rel="stylesheet" href="../../css/style.css">
+  <link rel="stylesheet" href="../../css/layout.css">
+  <link rel="stylesheet" href="../../css/question.css">
 </head>
 
 <body>
   <div class="container">
     <h1 class="text-center">撕破布比賽</h1>
     <h2>題目</h2>
-    <p>輸入一實數d, 假設破布面積d, 每次將破布撕去一半, 請問多久次以後面積會小於0.00001。</p>
+    <p>輸入一實數 d, 假設破布面積 d, 每次將破布撕去一半, 請問多久次以後面積會小於 0.00001。</p>
 
     <hr>
 
@@ -33,9 +34,14 @@
 
       input1.addEventListener('change', changeHandler)
       function changeHandler() {
-        let n = parseInt(input1.value)
+        let d = parseInt(input1.value)
         let result = '';
-
+        let c = 0;
+        while (d > 0.00001) {
+          d = d / 2
+          c++
+        }
+        result = c
         output.innerHTML = result
       }
     </script>

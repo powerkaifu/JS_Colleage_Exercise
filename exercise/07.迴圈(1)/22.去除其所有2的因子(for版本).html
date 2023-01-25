@@ -8,7 +8,8 @@
   <title>去除其所有"2的因子"(for版本)</title>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../../css/bootstrap.css">
-  <link rel="stylesheet" href="../../css/style.css">
+  <link rel="stylesheet" href="../../css/layout.css">
+  <link rel="stylesheet" href="../../css/question.css">
 </head>
 
 <body>
@@ -17,7 +18,7 @@
     <h2>題目</h2>
     <p>
       輸入一整數，去除其所有"2的因子"(能被二整除)，並輸出結果。<br>
-      例如8，去除其所有"2的因子"(能被二整除)則為1 (因為8去除2的因子會變成4, 4再去除2的因子會變成2, 2再去除2的因子會變成1, 1已經沒有2的因子，所以答案是1)
+      例如 8，去除其所有 "2的因子"(能被二整除)則為 1 (因為 8 去除 2 的因子會變成 4, 4 再去除 2 的因子會變成 2, 2 再去除 2 的因子會變成 1, 1 已經沒有 2 的因子，所以答案是1)
     </p>
 
     <hr>
@@ -37,7 +38,16 @@
       input1.addEventListener('change', changeHandler)
       function changeHandler() {
         let n = parseInt(input1.value)
-        let result = '';
+        let result = null;
+
+        for (; ;) {
+          if (n % 2 === 0) {
+            n = n / 2
+          } else {
+            result = n
+            break
+          }
+        }
 
         output.innerHTML = result
       }

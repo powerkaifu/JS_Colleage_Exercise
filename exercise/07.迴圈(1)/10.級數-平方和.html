@@ -8,7 +8,8 @@
   <title>級數-平方和</title>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../../css/bootstrap.css">
-  <link rel="stylesheet" href="../../css/style.css">
+  <link rel="stylesheet" href="../../css/layout.css">
+  <link rel="stylesheet" href="../../css/question.css">
 </head>
 
 <body>
@@ -34,7 +35,11 @@
       input1.addEventListener('change', changeHandler)
       function changeHandler() {
         let n = parseInt(input1.value)
-        let result = '';
+        let result = 0
+
+        for (let i = 1; i <= n; i++) {
+          result += i * i
+        }
 
         output.innerHTML = result
       }

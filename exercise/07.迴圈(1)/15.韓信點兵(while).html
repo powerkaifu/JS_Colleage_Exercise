@@ -8,15 +8,20 @@
   <title>韓信點兵(while)</title>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../../css/bootstrap.css">
-  <link rel="stylesheet" href="../../css/style.css">
+  <link rel="stylesheet" href="../../css/layout.css">
+  <link rel="stylesheet" href="../../css/question.css">
 </head>
 
 <body>
   <div class="container">
     <h1 class="text-center">韓信點兵(while)</h1>
     <h2>題目</h2>
-    <p>韓信點兵：每7個一數多1個，每11個一數少2個，每17個一數多2個。給訂一個整數k，請問比k大且又符合韓信點兵規則的最少個數為何? 請在螢幕上輸出。 (不可使用for迴圈)</p>
-
+    <p>韓信點兵：每 7 個一數多 1 個，每 11 個一數少 2 個，每 17 個一數多 2 個。<br>
+      給訂一個整數 k，請問比 k 大且又符合韓信點兵規則的最少個數為何? 請在螢幕上輸出。<br><br>
+      例子:<br>
+      輸入: 3069<br>
+      輸出: 3606
+    </p>
     <hr>
 
     <h2>輸入</h2>
@@ -33,8 +38,16 @@
 
       input1.addEventListener('change', changeHandler)
       function changeHandler() {
-        let n = parseInt(input1.value)
+        let k = parseInt(input1.value)
         let result = '';
+
+        while (true) {
+          if ((k - 1) % 7 === 0 && (k + 2) % 11 === 0 && (k - 2) % 17 === 0) {
+            result = k
+            break
+          }
+          k++
+        }
 
         output.innerHTML = result
       }

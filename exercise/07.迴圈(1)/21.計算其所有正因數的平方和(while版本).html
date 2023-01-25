@@ -8,14 +8,15 @@
   <title>計算其所有正因數的平方和(while版本)</title>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../../css/bootstrap.css">
-  <link rel="stylesheet" href="../../css/style.css">
+  <link rel="stylesheet" href="../../css/layout.css">
+  <link rel="stylesheet" href="../../css/question.css">
 </head>
 
 <body>
   <div class="container">
     <h1 class="text-center">計算其所有正因數的平方和(while版本)</h1>
     <h2>題目</h2>
-    <p>輸入一整數n，計算其所有正因數的平方和，並輸出結果。</p>
+    <p>輸入一整數 n，計算其所有正因數的平方和，並輸出結果。</p>
 
     <hr>
 
@@ -34,7 +35,14 @@
       input1.addEventListener('change', changeHandler)
       function changeHandler() {
         let n = parseInt(input1.value)
-        let result = '';
+        let result = null;
+        let i = 1;
+        while (i <= n) {
+          if (n % i === 0) {
+            result += i * i
+          }
+          i++
+        }
 
         output.innerHTML = result
       }

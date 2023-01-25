@@ -8,14 +8,19 @@
   <title>嫦娥養小白兔</title>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../../css/bootstrap.css">
-  <link rel="stylesheet" href="../../css/style.css">
+  <link rel="stylesheet" href="../../css/layout.css">
+  <link rel="stylesheet" href="../../css/question.css">
 </head>
 
 <body>
   <div class="container">
     <h1 class="text-center">嫦娥養小白兔</h1>
     <h2>題目</h2>
-    <p>嫦娥養小白兔：已知嫦娥養的小白兔個數是個大於1的平方數，且每n個一數多1隻，請輸入n，計算最少有幾隻小白兔，請在螢幕上輸出。 例如： 輸入ｎ為１２，則輸出答案為２５ (因為２５是５的平方，且２５除以１２餘數為１)。</p>
+    <p>
+      嫦娥養小白兔：已知嫦娥養的小白兔個數是個大於 1 的平方數，且每 n 個一數多 1 隻，<br>
+      請輸入n，計算最少有幾隻小白兔，請在螢幕上輸出。<br>
+      例如：輸入 ｎ 為 １２，則輸出答案為 ２５ (因為 ２５ 是 ５ 的平方，且 ２５ 除以 １２ 餘數為 １)。
+    </p>
 
     <hr>
 
@@ -35,7 +40,12 @@
       function changeHandler() {
         let n = parseInt(input1.value)
         let result = '';
-
+        for (let i = 2; ; i++) {
+          if ((i * i) % n === 1) {
+            result = i * i
+            break
+          }
+        }
         output.innerHTML = result
       }
     </script>

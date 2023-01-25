@@ -8,35 +8,69 @@
   <title>孟德爾數豌豆</title>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../../css/bootstrap.css">
-  <link rel="stylesheet" href="../../css/style.css">
+  <link rel="stylesheet" href="../../css/layout.css">
+  <link rel="stylesheet" href="../../css/question.css">
 </head>
 
 <body>
   <div class="container">
     <h1 class="text-center">孟德爾數豌豆</h1>
     <h2>題目</h2>
-    <p>孟德爾數豌豆：每a個一數多2個，b個一數少1個，c個一數少2個。 輸入a、b、c，最少幾豌豆。</p>
+    <p>
+      孟德爾數豌豆：每 a 個一數多 2 個，b 個一數少 1 個，c 個一數少 2 個。 輸入 a、b、c，最少幾豌豆。若找不到請輸出"不可能找到"<br><br>
+
+      範例1:<br>
+      輸入: 79 13 58<br>
+      輸出: 17224<br><br>
+
+      範例2:<br>
+      輸入: 99 63 44<br>
+      輸出: "不可能找到"<br>
+    </p>
 
     <hr>
 
     <h2>輸入</h2>
-    數字:<input id="input1" type="text" value="0"><br>
-
+    數字a:<input id="input1" type="text" value="0"><br>
+    數字b:<input id="input2" type="text" value="0"><br>
+    數字c:<input id="input3" type="text" value="0"><br>
+    <br>
+    <button id="submit">送出</button>
     <hr>
 
     <h2>輸出</h2>
     <div id="output"></div>
     <script>
       const input1 = document.querySelector('#input1')
+      const input2 = document.querySelector('#input2')
+      const input3 = document.querySelector('#input3')
+      const submit = document.querySelector('#submit')
       const output = document.querySelector('#output')
       output.innerHTML = null
 
-      input1.addEventListener('change', changeHandler)
-      function changeHandler() {
-        let n = parseInt(input1.value)
+      submit.addEventListener('click', clickHandler)
+      function clickHandler() {
+        let a = parseInt(input1.value)
+        let b = parseInt(input2.value)
+        let c = parseInt(input3.value)
+        let isFind = false
         let result = '';
+        limit = a * b * c
 
-        output.innerHTML = result
+        for (let i = 1; i <= limit; i++) {
+          if ((i - 2) % a === 0 && (i + 1) % b === 0 && (i + 2) % c === 0) {
+            isFind = true
+            result = i
+            break
+          }
+        }
+
+        if (isFind === true) {
+          output.innerHTML = result
+        } else {
+          output.innerHTML = '不可能找到'
+        }
+
       }
     </script>
   </div>

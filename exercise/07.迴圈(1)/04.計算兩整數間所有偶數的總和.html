@@ -8,19 +8,23 @@
   <title>計算兩整數間所有偶數的總和</title>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../../css/bootstrap.css">
-  <link rel="stylesheet" href="../../css/style.css">
+  <link rel="stylesheet" href="../../css/layout.css">
+  <link rel="stylesheet" href="../../css/question.css">
 </head>
 
 <body>
   <div class="container">
     <h1 class="text-center">計算兩整數間所有偶數的總和</h1>
     <h2>題目</h2>
-    <p>試寫一個程式，輸入兩個整數，並計算兩整數間所有偶數的總和。</p>
-
+    <p>試寫一個程式，輸入兩個整數，並計算兩整數間所有偶數的總和。(輸入的 數字1 可以比 數字2 大)</p>
+    <p>例如:</p>
+    <p>52 68 => 540</p>
+    <p>68 52 => 540</p>
     <hr>
 
     <h2>輸入</h2>
-    數字:<input id="input1" type="text" value="0"><br>
+    數字1:<input id="input1" type="text" value="0"><br>
+    數字2:<input id="input2" type="text" value="0"><br>
 
     <hr>
 
@@ -28,13 +32,30 @@
     <div id="output"></div>
     <script>
       const input1 = document.querySelector('#input1')
+      const input2 = document.querySelector('#input2')
       const output = document.querySelector('#output')
       output.innerHTML = null
 
       input1.addEventListener('change', changeHandler)
+      input2.addEventListener('change', changeHandler)
+
       function changeHandler() {
-        let n = parseInt(input1.value)
-        let result = '';
+        let n1 = parseInt(input1.value)
+        let n2 = parseInt(input2.value)
+        let tmp = 0
+        let result = 0
+
+        if (n1 > n2) {
+          tmp = n1
+          n1 = n2
+          n2 = tmp
+        }
+
+        for (let i = n1; i <= n2; i++) {
+          if (i % 2 == 0) {
+            result += i
+          }
+        }
 
         output.innerHTML = result
       }

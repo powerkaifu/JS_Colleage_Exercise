@@ -8,7 +8,8 @@
   <title>2或3的倍數</title>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../../css/bootstrap.css">
-  <link rel="stylesheet" href="../../css/style.css">
+  <link rel="stylesheet" href="../../css/layout.css">
+  <link rel="stylesheet" href="../../css/question.css">
 </head>
 
 <body>
@@ -16,8 +17,7 @@
     <h1 class="text-center">2或3的倍數</h1>
     <h2>題目</h2>
     <p>
-      輸入一整數n,輸出比n小的正數且是(2的倍數或3的倍數)<br>
-      每10個輸出換行
+      輸入一整數 n,輸出比 n 小的正數且是(2 的倍數或 3 的倍數)，每 10 個輸出換行。
     </p>
 
     <hr>
@@ -37,7 +37,16 @@
       input1.addEventListener('change', changeHandler)
       function changeHandler() {
         let n = parseInt(input1.value)
-        let result = '';
+        let c = 0
+        let result = ''
+
+        for (let i = 1; i < n; i++) {
+          if (i % 2 === 0 || i % 3 === 0) {
+            result += ` ${i}`
+            c++
+            if (c % 10 == 0) result += '<br>'
+          }
+        }
 
         output.innerHTML = result
       }

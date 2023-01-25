@@ -8,19 +8,27 @@
   <title>N階乘</title>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../../css/bootstrap.css">
-  <link rel="stylesheet" href="../../css/style.css">
+  <link rel="stylesheet" href="../../css/layout.css">
+  <link rel="stylesheet" href="../../css/question.css">
 </head>
 
 <body>
   <div class="container">
     <h1 class="text-center">N階乘</h1>
     <h2>題目</h2>
-    <p>輸入一個非負整數 N 。輸出N!。</p>
+    <p>
+      輸入一個非負整數 N 。輸出N!。<br>
+      0! = 1<br>
+      1! = 1<br>
+      2! = 2<br>
+      3! = 6<br>
+      10! = 3628800<br>
+    </p>
 
     <hr>
 
     <h2>輸入</h2>
-    數字:<input id="input1" type="text" value="0"><br>
+    階乘:<input id="input1" type="text" value="0"><br>
 
     <hr>
 
@@ -32,9 +40,16 @@
       output.innerHTML = null
 
       input1.addEventListener('change', changeHandler)
+      window.addEventListener('load', changeHandler)
+
       function changeHandler() {
         let n = parseInt(input1.value)
-        let result = '';
+        let result = 1;
+
+        if (n === 0) result = 1
+        for (let i = 1; i <= n; i++) {
+          result *= i
+        }
 
         output.innerHTML = result
       }

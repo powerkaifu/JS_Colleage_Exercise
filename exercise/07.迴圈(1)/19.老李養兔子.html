@@ -8,36 +8,60 @@
   <title>老李養兔子</title>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../../css/bootstrap.css">
-  <link rel="stylesheet" href="../../css/style.css">
+  <link rel="stylesheet" href="../../css/layout.css">
+  <link rel="stylesheet" href="../../css/question.css">
 </head>
 
 <body>
   <div class="container">
     <h1 class="text-center">老李養兔子</h1>
     <h2>題目</h2>
-    <p>老李養兔子：每7個一數多a個，每11個一數少b個，每17個一數多c個，請輸入三整數a、b、c，計算最少有幾個，請在螢幕上輸出。</p>
+    <p>
+      老李養兔子：每 7 個一數多 a 個，每 11 個一數少 b 個，每 17 個一數多 c 個，請輸入三整數 a、b、c，計算最少有幾個，請在螢幕上輸出。<br><br>
+      範例:<br>
+      5 1 3 => 54<br>
+      1 2 3 => 1142
+    </p>
+
 
     <hr>
 
     <h2>輸入</h2>
-    數字:<input id="input1" type="text" value="0"><br>
-
+    數字a:<input id="input1" type="text" value="0"><br>
+    數字b:<input id="input2" type="text" value="0"><br>
+    數字c:<input id="input3" type="text" value="0"><br><br>
+    <button id="submit">送出</button>
     <hr>
 
     <h2>輸出</h2>
     <div id="output"></div>
     <script>
       const input1 = document.querySelector('#input1')
+      const input2 = document.querySelector('#input2')
+      const input3 = document.querySelector('#input3')
       const output = document.querySelector('#output')
+      const submit = document.querySelector('#submit')
+
       output.innerHTML = null
 
-      input1.addEventListener('change', changeHandler)
-      function changeHandler() {
-        let n = parseInt(input1.value)
-        let result = '';
+      submit.addEventListener('click', clickHandler)
+      function clickHandler() {
+        let a = parseInt(input1.value)
+        let b = parseInt(input2.value)
+        let c = parseInt(input3.value)
+        let result = null;
+        let x = 1;
 
+        while (true) {
+          x++
+          if ((x - a) % 7 === 0 && (x + b) % 11 === 0 && (x - c) % 17 === 0) {
+            result = x
+            break
+          }
+        }
         output.innerHTML = result
       }
+
     </script>
   </div>
 

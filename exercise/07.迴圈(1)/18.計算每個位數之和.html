@@ -8,7 +8,8 @@
   <title>計算每個位數之和</title>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../../css/bootstrap.css">
-  <link rel="stylesheet" href="../../css/style.css">
+  <link rel="stylesheet" href="../../css/layout.css">
+  <link rel="stylesheet" href="../../css/question.css">
 </head>
 
 <body>
@@ -34,7 +35,12 @@
       input1.addEventListener('change', changeHandler)
       function changeHandler() {
         let n = parseInt(input1.value)
-        let result = '';
+        let result = null;
+
+        while (n > 0) {
+          result += n % 10
+          n = Math.floor(n / 10)
+        }
 
         output.innerHTML = result
       }

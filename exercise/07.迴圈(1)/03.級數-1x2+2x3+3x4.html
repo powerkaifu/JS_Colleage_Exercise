@@ -8,7 +8,8 @@
   <title>級數: 1*2+2*3+3*4+...</title>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../../css/bootstrap.css">
-  <link rel="stylesheet" href="../../css/style.css">
+  <link rel="stylesheet" href="../../css/layout.css">
+  <link rel="stylesheet" href="../../css/question.css">
 </head>
 
 <body>
@@ -16,7 +17,7 @@
     <h1 class="text-center">級數: 1*2+2*3+3*4+...</h1>
     <h2>題目</h2>
     <p>考慮數列 1*2, 2*3, 3*4 , 4*5, 5*6, 6*7,...<br>
-      輸入一整數n，輸出該數列前n項之和。</p>
+      輸入一整數 n，輸出該數列前 n 項之和。</p>
 
     <hr>
 
@@ -35,7 +36,10 @@
       input1.addEventListener('change', changeHandler)
       function changeHandler() {
         let n = parseInt(input1.value)
-        let result = '';
+        let result = 0;
+        for (let i = 1; i <= n; i++) {
+          result += i * (i + 1)
+        }
 
         output.innerHTML = result
       }

@@ -8,14 +8,15 @@
   <title>十進位轉七進位</title>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../../css/bootstrap.css">
-  <link rel="stylesheet" href="../../css/style.css">
+  <link rel="stylesheet" href="../../css/layout.css">
+  <link rel="stylesheet" href="../../css/question.css">
 </head>
 
 <body>
   <div class="container">
     <h1 class="text-center">十進位轉七進位</h1>
     <h2>題目</h2>
-    <p>輸入一個正整數N，輸出該數的七進位表達式。</p>
+    <p>輸入一個正整數 N，輸出該數的七進位表達式。</p>
 
     <hr>
 
@@ -34,8 +35,24 @@
       input1.addEventListener('change', changeHandler)
       function changeHandler() {
         let n = parseInt(input1.value)
-        let result = '';
 
+        // 字串解法
+        let result = '';
+        while (n > 0) {
+          result += n % 7
+          n = Math.floor(n / 7)
+        }
+
+        // 數字解法
+        /*
+        let result = 0
+        let c = 0
+        while (n > 0) {
+          result += n % 7 * Math.pow(10, c)
+          n = Math.floor(n / 7)
+          c++
+        }
+        */
         output.innerHTML = result
       }
     </script>
