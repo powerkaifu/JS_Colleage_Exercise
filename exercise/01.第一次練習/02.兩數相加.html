@@ -28,26 +28,24 @@
 
     <h2>輸出</h2>
     <div id="output"></div>
-
-    <script>
-      const input1 = document.querySelector('#input1')
-      const input2 = document.querySelector('#input2')
-      const output = document.querySelector('#output')
-      output.innerHTML = 0
-
-      input1.addEventListener('change', changeHandler)
-      input2.addEventListener('change', changeHandler)
-      function changeHandler(e) {
-        let n1 = Number(input1.value)
-        let n2 = Number(input2.value)
-        let sum = n1 + n2
-        output.innerHTML = sum
-      }
-    </script>
   </div>
 
   <script src="../../js/bootstrap.bundle.min.js"></script>
+  <script>
+    const input1 = document.querySelector('#input1')
+    const input2 = document.querySelector('#input2')
+    const output = document.querySelector('#output')
+    output.innerHTML = 0
 
+    input1.addEventListener('change', changeHandler)
+    input2.addEventListener('change', changeHandler)
+    function changeHandler(e) {
+      let n1 = Number(input1.value)
+      let n2 = Number(input2.value)
+      let sum = n1 + n2
+      output.innerHTML = sum
+    }
+  </script>
 </body>
 
 </html>

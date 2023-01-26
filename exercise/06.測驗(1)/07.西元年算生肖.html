@@ -41,36 +41,35 @@
 
     <h2>輸出</h2>
     <div id="output"></div>
-    <script>
-      const input1 = document.querySelector('#input1')
-      const output = document.querySelector('#output')
-      output.innerHTML = null
-
-      input1.addEventListener('change', changeHandler)
-      function changeHandler() {
-        let year = parseInt(input1.value)
-        let result = '';
-
-        if (year % 12 === 4) result = '鼠'
-        if (year % 12 === 5) result = '牛'
-        if (year % 12 === 6) result = '虎'
-        if (year % 12 === 7) result = '兔'
-        if (year % 12 === 8) result = '龍'
-        if (year % 12 === 9) result = '蛇'
-        if (year % 12 === 10) result = '馬'
-        if (year % 12 === 11) result = '羊'
-        if (year % 12 === 0) result = '猴'
-        if (year % 12 === 1) result = '雞'
-        if (year % 12 === 2) result = '狗'
-        if (year % 12 === 3) result = '豬'
-
-        output.innerHTML = result
-      }
-    </script>
   </div>
 
   <script src="../../js/bootstrap.bundle.min.js"></script>
+  <script>
+    const input1 = document.querySelector('#input1')
+    const output = document.querySelector('#output')
+    output.innerHTML = null
 
+    input1.addEventListener('change', changeHandler)
+    function changeHandler() {
+      let year = parseInt(input1.value)
+      let result = '';
+
+      if (year % 12 === 4) result = '鼠'
+      if (year % 12 === 5) result = '牛'
+      if (year % 12 === 6) result = '虎'
+      if (year % 12 === 7) result = '兔'
+      if (year % 12 === 8) result = '龍'
+      if (year % 12 === 9) result = '蛇'
+      if (year % 12 === 10) result = '馬'
+      if (year % 12 === 11) result = '羊'
+      if (year % 12 === 0) result = '猴'
+      if (year % 12 === 1) result = '雞'
+      if (year % 12 === 2) result = '狗'
+      if (year % 12 === 3) result = '豬'
+
+      output.innerHTML = result
+    }
+  </script>
 </body>
 
 </html>

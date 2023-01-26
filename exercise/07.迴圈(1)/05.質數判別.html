@@ -27,27 +27,26 @@
 
     <h2>輸出</h2>
     <div id="output"></div>
-    <script>
-      const input1 = document.querySelector('#input1')
-      const output = document.querySelector('#output')
-      output.innerHTML = null
-
-      input1.addEventListener('change', changeHandler)
-      function changeHandler() {
-        let n = parseInt(input1.value)
-        let result = 'Yes'
-        if (n === 1) result = 'No'
-        for (let i = 2; i < n; i++) {
-          if (n % i == 0) result = "No"
-        }
-
-        output.innerHTML = result
-      }
-    </script>
   </div>
 
   <script src="../../js/bootstrap.bundle.min.js"></script>
+  <script>
+    const input1 = document.querySelector('#input1')
+    const output = document.querySelector('#output')
+    output.innerHTML = null
 
+    input1.addEventListener('change', changeHandler)
+    function changeHandler() {
+      let n = parseInt(input1.value)
+      let result = 'Yes'
+      if (n === 1) result = 'No'
+      for (let i = 2; i < n; i++) {
+        if (n % i == 0) result = "No"
+      }
+
+      output.innerHTML = result
+    }
+  </script>
 </body>
 
 </html>

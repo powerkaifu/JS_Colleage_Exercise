@@ -27,39 +27,38 @@
 
     <h2>輸出</h2>
     <div id="output"></div>
-    <script>
-      const input1 = document.querySelector('#input1')
-      const output = document.querySelector('#output')
-      output.innerHTML = null
-
-      input1.addEventListener('change', changeHandler)
-      function changeHandler() {
-        let n = parseInt(input1.value)
-
-        // 字串解法
-        let result = '';
-        while (n > 0) {
-          result += n % 7
-          n = Math.floor(n / 7)
-        }
-
-        // 數字解法
-        /*
-        let result = 0
-        let c = 0
-        while (n > 0) {
-          result += n % 7 * Math.pow(10, c)
-          n = Math.floor(n / 7)
-          c++
-        }
-        */
-        output.innerHTML = result
-      }
-    </script>
   </div>
 
   <script src="../../js/bootstrap.bundle.min.js"></script>
+  <script>
+    const input1 = document.querySelector('#input1')
+    const output = document.querySelector('#output')
+    output.innerHTML = null
 
+    input1.addEventListener('change', changeHandler)
+    function changeHandler() {
+      let n = parseInt(input1.value)
+
+      // 字串解法
+      let result = '';
+      while (n > 0) {
+        result += n % 7
+        n = Math.floor(n / 7)
+      }
+
+      // 數字解法
+      /*
+      let result = 0
+      let c = 0
+      while (n > 0) {
+        result += n % 7 * Math.pow(10, c)
+        n = Math.floor(n / 7)
+        c++
+      }
+      */
+      output.innerHTML = result
+    }
+  </script>
 </body>
 
 </html>

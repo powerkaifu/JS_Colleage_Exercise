@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Zn之加法表</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../css/bootstrap.css">
+  <link rel="stylesheet" href="../../css/layout.css">
+  <link rel="stylesheet" href="../../css/question.css">
+</head>
+
+<body>
+  <div class="container">
+    <h1 class="text-center">Zn之加法表</h1>
+    <h2>題目</h2>
+    <p>
+      輸入一正整數n，印出 Zn 之加法表，Zn = {0,1,2,3...,n-1} <br><br>
+
+      其加法規則為 x + y = (x+y) mod n<br>
+      左方之加法為 (Zn,+)之加法，右方之加法為 實數之加法<br>
+      mod n 表示 除以 n 求餘數
+    </p>
+
+    <hr>
+
+    <h2>輸入</h2>
+    數字:<input id="input1" type="text" value="0"><br>
+
+    <hr>
+
+    <h2>輸出</h2>
+    <div id="output"></div>
+  </div>
+
+  <script src="../../js/bootstrap.bundle.min.js"></script>
+  <script>
+    const input1 = document.querySelector('#input1')
+    const output = document.querySelector('#output')
+    output.innerHTML = null
+
+    input1.addEventListener('change', changeHandler)
+    function changeHandler() {
+      let n = parseInt(input1.value)
+      let result = '';
+
+      for (let i = 0; i < n; i++) {
+        for (let j = 0; j < n; j++) {
+          result += `&emsp;${(i + j) % n}`
+        }
+        result += `<br>`
+      }
+      output.innerHTML = result
+    }
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>1元、5元、10元、20元和50元所有解析法</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../css/bootstrap.css">
+  <link rel="stylesheet" href="../../css/layout.css">
+  <link rel="stylesheet" href="../../css/question.css">
+</head>
+
+<body>
+  <div class="container">
+    <h1 class="text-center">1元、5元、10元、20元和50元所有解析法</h1>
+    <h2>題目</h2>
+    <p>輸入一金額，輸出用1元、5元、10元、20元和50元所有解析法(排列順序依銅板個數由多至少排列)。</p>
+
+    <hr>
+
+    <h2>輸入</h2>
+    數字:<input id="input1" type="text" value="0"><br>
+
+    <hr>
+
+    <h2>輸出</h2>
+    <div id="output"></div>
+  </div>
+
+  <script src="../../js/bootstrap.bundle.min.js"></script>
+  <script>
+    const input1 = document.querySelector('#input1')
+    const output = document.querySelector('#output')
+    output.innerHTML = null
+
+    input1.addEventListener('change', changeHandler)
+    function changeHandler() {
+      let d = parseInt(input1.value)
+      let result = '';
+      for (let i = 0; i <= Math.floor(d / 50); i++) {
+        for (let j = 0; j <= Math.floor((d - (50 * i)) / 20); j++) {
+          for (let k = 0; k <= Math.floor((d - (50 * i + 20 * j)) / 10); k++) {
+            for (let m = 0; m <= Math.floor((d - (50 * i + 20 * j + 10 * k)) / 5); m++) {
+              result += `50元:${i}&emsp;20元:${j}&emsp;10元:${k}&emsp;5元:${m}&emsp;1元:${d - (50 * i + 20 * j + 10 * k + 5 * m)}<br>`
+            }
+          }
+        }
+      }
+      output.innerHTML = result
+    }
+  </script>
+</body>
+
+</html>

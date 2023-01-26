@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>畫n層菱形</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../css/bootstrap.css">
+  <link rel="stylesheet" href="../../css/layout.css">
+  <link rel="stylesheet" href="../../css/question.css">
+</head>
+
+<body>
+  <div class="container">
+    <h1 class="text-center">畫n層菱形</h1>
+    <h2>題目</h2>
+    <p>
+      輸入一整數n，用 ★ 畫出一個 n 層的菱形，奇數層與偶數層如下:<br>
+      例如: n=5<br>
+      &emsp;&emsp;★<br>
+      &emsp;★★★<br>
+      ★★★★★<br>
+      &emsp;★★★<br>
+      &emsp;&emsp;★<br><br>
+
+      例如: n=6<br>
+      &emsp;&emsp;★<br>
+      &emsp;★★★<br>
+      ★★★★★<br>
+      ★★★★★<br>
+      &emsp;★★★<br>
+      &emsp;&emsp;★<br>
+    </p>
+
+    <hr>
+
+    <h2>輸入</h2>
+    數字:<input id="input1" type="text" value="0"><br>
+
+    <hr>
+
+    <h2>輸出</h2>
+    <div id="output"></div>
+  </div>
+
+  <script src="../../js/bootstrap.bundle.min.js"></script>
+  <script>
+    const input1 = document.querySelector('#input1')
+    const output = document.querySelector('#output')
+    output.innerHTML = null
+
+    input1.addEventListener('change', changeHandler)
+    function changeHandler() {
+      let n = parseInt(input1.value)
+      let result = '';
+      if (n % 2 === 1) {
+        let half = Math.ceil(n / 2)
+        for (let i = 1; i <= half; i++) {
+          for (let space = 1; space <= half - i; space++) {
+            result += '&emsp;'
+          }
+          for (let star = 1; star <= 2 * i - 1; star++) {
+            result += '★'
+          }
+          result += '<br>'
+        }
+        for (let i = 1; i <= half - 1; i++) {
+          for (let space = 1; space <= i; space++) {
+            result += '&emsp;'
+          }
+          for (let star = 1; star <= 2 * (half - i) - 1; star++) {
+            result += '★'
+          }
+          result += '<br>'
+        }
+      } else {
+        let half = n / 2
+        for (let i = 1; i <= half; i++) {
+          for (let space = 1; space <= half - i; space++) {
+            result += '&emsp;'
+          }
+          for (let star = 1; star <= 2 * i - 1; star++) {
+            result += '★'
+          }
+          result += '<br>'
+        }
+        for (let i = 1; i <= half; i++) {
+          for (let space = 1; space <= i - 1; space++) {
+            result += '&emsp;'
+          }
+          for (let star = 1; star <= 2 * (half - i) + 1; star++) {
+            result += '★'
+          }
+          result += '<br>'
+        }
+      }
+
+      output.innerHTML = result
+    }
+  </script>
+</body>
+
+</html>

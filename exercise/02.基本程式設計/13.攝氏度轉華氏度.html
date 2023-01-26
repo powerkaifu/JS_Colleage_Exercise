@@ -29,22 +29,20 @@
 
     <h2>輸出</h2>
     <div id="output"></div>
-
-    <script>
-      const input1 = document.querySelector('#input1')
-      const output = document.querySelector('#output')
-      output.innerHTML = 0
-
-      input1.addEventListener('change', changeHandler)
-      function changeHandler() {
-        let C = input1.value
-        output.innerHTML = (C * 9 / 5) + 32
-      }
-    </script>
   </div>
 
   <script src="../../js/bootstrap.bundle.min.js"></script>
+  <script>
+    const input1 = document.querySelector('#input1')
+    const output = document.querySelector('#output')
+    output.innerHTML = 0
 
+    input1.addEventListener('change', changeHandler)
+    function changeHandler() {
+      let C = input1.value
+      output.innerHTML = (C * 9 / 5) + 32
+    }
+  </script>
 </body>
 
 </html>

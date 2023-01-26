@@ -27,30 +27,29 @@
 
     <h2>輸出</h2>
     <div id="output"></div>
-    <script>
-      const input1 = document.querySelector('#input1')
-      const output = document.querySelector('#output')
-      output.innerHTML = null
-
-      input1.addEventListener('change', changeHandler)
-      function changeHandler() {
-        let m = parseInt(input1.value)
-        let result = '';
-        if (m === 1 || m === 3 || m === 5 || m === 7 || m === 8 || m === 10 || m === 12) {
-          result = '大月'
-        } else if (m === 2 || m === 4 || m === 6 || m === 9 || m === 11) {
-          result = '小月'
-        } else {
-          result = '請輸入正確月份'
-        }
-
-        output.innerHTML = result
-      }
-    </script>
   </div>
 
   <script src="../../js/bootstrap.bundle.min.js"></script>
+  <script>
+    const input1 = document.querySelector('#input1')
+    const output = document.querySelector('#output')
+    output.innerHTML = null
 
+    input1.addEventListener('change', changeHandler)
+    function changeHandler() {
+      let m = parseInt(input1.value)
+      let result = '';
+      if (m === 1 || m === 3 || m === 5 || m === 7 || m === 8 || m === 10 || m === 12) {
+        result = '大月'
+      } else if (m === 2 || m === 4 || m === 6 || m === 9 || m === 11) {
+        result = '小月'
+      } else {
+        result = '請輸入正確月份'
+      }
+
+      output.innerHTML = result
+    }
+  </script>
 </body>
 
 </html>

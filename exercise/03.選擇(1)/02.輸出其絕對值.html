@@ -27,29 +27,28 @@
 
     <h2>輸出</h2>
     <div id="output"></div>
-    <script>
-      const input1 = document.querySelector('#input1')
-      const output = document.querySelector('#output')
-      output.innerHTML = null
-
-      input1.addEventListener('change', changeHandler)
-      function changeHandler() {
-        let result = '';
-        let n = parseInt(input1.value)
-        if (isNaN(n)) {
-          result = '輸入的不是數字'
-        } else if (n < 0) {
-          result = n * -1
-        } else {
-          result = n
-        }
-        output.innerHTML = result
-      }
-    </script>
   </div>
 
   <script src="../../js/bootstrap.bundle.min.js"></script>
+  <script>
+    const input1 = document.querySelector('#input1')
+    const output = document.querySelector('#output')
+    output.innerHTML = null
 
+    input1.addEventListener('change', changeHandler)
+    function changeHandler() {
+      let result = '';
+      let n = parseInt(input1.value)
+      if (isNaN(n)) {
+        result = '輸入的不是數字'
+      } else if (n < 0) {
+        result = n * -1
+      } else {
+        result = n
+      }
+      output.innerHTML = result
+    }
+  </script>
 </body>
 
 </html>

@@ -28,36 +28,35 @@
 
     <h2>輸出</h2>
     <div id="output"></div>
-    <script>
-      const input1 = document.querySelector('#input1')
-      const input2 = document.querySelector('#input2')
-
-      const output = document.querySelector('#output')
-      output.innerHTML = null
-
-      input1.addEventListener('change', changeHandler)
-      input2.addEventListener('change', changeHandler)
-
-      function changeHandler() {
-        let n1 = parseInt(input1.value)
-        let n2 = parseInt(input2.value)
-        let tmp = 0
-        tmp = n1
-        n1 = n2
-        n2 = tmp
-
-        let result = `
-          輸入:${input1.value} ${input2.value}<br>
-          交換:${n1} ${n2}
-        `;
-
-        output.innerHTML = result
-      }
-    </script>
   </div>
 
   <script src="../../js/bootstrap.bundle.min.js"></script>
+  <script>
+    const input1 = document.querySelector('#input1')
+    const input2 = document.querySelector('#input2')
 
+    const output = document.querySelector('#output')
+    output.innerHTML = null
+
+    input1.addEventListener('change', changeHandler)
+    input2.addEventListener('change', changeHandler)
+
+    function changeHandler() {
+      let n1 = parseInt(input1.value)
+      let n2 = parseInt(input2.value)
+      let tmp = 0
+      tmp = n1
+      n1 = n2
+      n2 = tmp
+
+      let result = `
+        輸入:${input1.value} ${input2.value}<br>
+        交換:${n1} ${n2}
+      `;
+
+      output.innerHTML = result
+    }
+  </script>
 </body>
 
 </html>

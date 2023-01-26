@@ -35,39 +35,38 @@
 
     <h2>輸出</h2>
     <div id="output"></div>
-    <script>
-      const input1 = document.querySelector('#input1')
-      const input2 = document.querySelector('#input2')
-      const submit = document.querySelector('#submit')
-      const output = document.querySelector('#output')
-      output.innerHTML = null
-
-      submit.addEventListener('click', clickHandler)
-      function clickHandler() {
-        let h = parseFloat(input1.value)
-        let w = parseFloat(input2.value)
-        console.log(h, w)
-        let BMI = w / (h * h)
-        let result = '';
-
-        if (BMI > 24) {
-          result = '該減肥了喔!!'
-        } else if (BMI < 18.5) {
-          result = '太輕喔!!'
-        } else {
-          result = '標準喔!!'
-        }
-
-        output.innerHTML = `
-          BMI:${BMI}<br>
-          結果:${result}
-        `
-      }
-    </script>
   </div>
 
   <script src="../../js/bootstrap.bundle.min.js"></script>
+  <script>
+    const input1 = document.querySelector('#input1')
+    const input2 = document.querySelector('#input2')
+    const submit = document.querySelector('#submit')
+    const output = document.querySelector('#output')
+    output.innerHTML = null
 
+    submit.addEventListener('click', clickHandler)
+    function clickHandler() {
+      let h = parseFloat(input1.value)
+      let w = parseFloat(input2.value)
+      console.log(h, w)
+      let BMI = w / (h * h)
+      let result = '';
+
+      if (BMI > 24) {
+        result = '該減肥了喔!!'
+      } else if (BMI < 18.5) {
+        result = '太輕喔!!'
+      } else {
+        result = '標準喔!!'
+      }
+
+      output.innerHTML = `
+        BMI:${BMI}<br>
+        結果:${result}
+      `
+    }
+  </script>
 </body>
 
 </html>

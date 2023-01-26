@@ -39,59 +39,57 @@
 
     <h2>輸出</h2>
     <div id="output"></div>
-    <script>
-      const input1 = document.querySelector('#input1')
-      const output = document.querySelector('#output')
-      output.innerHTML = null
-
-      input1.addEventListener('change', changeHandler)
-      function changeHandler() {
-        let n = parseInt(input1.value)
-        let result = '';
-
-        switch (n) {
-          case 0:
-            result = 'zero'
-            break;
-          case 1:
-            result = 'un'
-            break;
-          case 2:
-            result = 'deux'
-            break;
-          case 3:
-            result = 'trois'
-            break;
-          case 4:
-            result = 'quatre'
-            break;
-          case 5:
-            result = 'cinq'
-            break;
-          case 6:
-            result = 'six'
-            break;
-          case 7:
-            result = 'sept'
-            break;
-          case 8:
-            result = 'huit'
-            break;
-          case 9:
-            result = 'neuf'
-            break;
-          default:
-            result = 'Input Error'
-            break;
-        }
-
-        output.innerHTML = result
-      }
-    </script>
   </div>
 
   <script src="../../js/bootstrap.bundle.min.js"></script>
+  <script>
+    const input1 = document.querySelector('#input1')
+    const output = document.querySelector('#output')
+    output.innerHTML = null
 
+    input1.addEventListener('change', changeHandler)
+    function changeHandler() {
+      let n = parseInt(input1.value)
+      let result = '';
+
+      switch (n) {
+        case 0:
+          result = 'zero'
+          break;
+        case 1:
+          result = 'un'
+          break;
+        case 2:
+          result = 'deux'
+          break;
+        case 3:
+          result = 'trois'
+          break;
+        case 4:
+          result = 'quatre'
+          break;
+        case 5:
+          result = 'cinq'
+          break;
+        case 6:
+          result = 'six'
+          break;
+        case 7:
+          result = 'sept'
+          break;
+        case 8:
+          result = 'huit'
+          break;
+        case 9:
+          result = 'neuf'
+          break;
+        default:
+          result = 'Input Error'
+          break;
+      }
+      output.innerHTML = result
+    }
+  </script>
 </body>
 
 </html>

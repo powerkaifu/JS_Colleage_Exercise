@@ -32,27 +32,26 @@
 
     <h2>輸出</h2>
     <div id="output"></div>
-    <script>
-      const input1 = document.querySelector('#input1')
-      const input2 = document.querySelector('#input2')
-      const input3 = document.querySelector('#input3')
-      const input4 = document.querySelector('#input4')
-      const output = document.querySelector('#output')
-      const submit = document.querySelector('#submit')
-      output.innerHTML = 0
-
-      submit.addEventListener('click', clickHandler)
-      function clickHandler() {
-        let x = (Number(input1.value) + Number(input3.value)) / 2
-        let y = (Number(input2.value) + Number(input4.value)) / 2
-        let result = `(${x.toFixed(1)},${y.toFixed(1)})`
-        output.innerHTML = result
-      }
-    </script>
   </div>
 
   <script src="../../js/bootstrap.bundle.min.js"></script>
+  <script>
+    const input1 = document.querySelector('#input1')
+    const input2 = document.querySelector('#input2')
+    const input3 = document.querySelector('#input3')
+    const input4 = document.querySelector('#input4')
+    const output = document.querySelector('#output')
+    const submit = document.querySelector('#submit')
+    output.innerHTML = 0
 
+    submit.addEventListener('click', clickHandler)
+    function clickHandler() {
+      let x = (Number(input1.value) + Number(input3.value)) / 2
+      let y = (Number(input2.value) + Number(input4.value)) / 2
+      let result = `(${x.toFixed(1)},${y.toFixed(1)})`
+      output.innerHTML = result
+    }
+  </script>
 </body>
 
 </html>

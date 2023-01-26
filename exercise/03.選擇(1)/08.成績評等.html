@@ -35,34 +35,33 @@
 
     <h2>輸出</h2>
     <div id="output"></div>
-    <script>
-      const input1 = document.querySelector('#input1')
-      const output = document.querySelector('#output')
-      output.innerHTML = null
-
-      input1.addEventListener('change', changeHandler)
-      function changeHandler() {
-        let n = parseInt(input1.value)
-        let result = '';
-
-        if (n >= 90) {
-          result = 'A+'
-        } else if (n >= 80) {
-          result = 'A'
-        } else if (n >= 70) {
-          result = 'B'
-        } else if (n >= 60) {
-          result = 'C'
-        } else {
-          result = 'D'
-        }
-        output.innerHTML = result
-      }
-    </script>
   </div>
 
   <script src="../../js/bootstrap.bundle.min.js"></script>
+  <script>
+    const input1 = document.querySelector('#input1')
+    const output = document.querySelector('#output')
+    output.innerHTML = null
 
+    input1.addEventListener('change', changeHandler)
+    function changeHandler() {
+      let n = parseInt(input1.value)
+      let result = '';
+
+      if (n >= 90) {
+        result = 'A+'
+      } else if (n >= 80) {
+        result = 'A'
+      } else if (n >= 70) {
+        result = 'B'
+      } else if (n >= 60) {
+        result = 'C'
+      } else {
+        result = 'D'
+      }
+      output.innerHTML = result
+    }
+  </script>
 </body>
 
 </html>

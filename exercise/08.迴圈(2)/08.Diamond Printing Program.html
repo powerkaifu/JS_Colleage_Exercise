@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Diamond Printing Program</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../css/bootstrap.css">
+  <link rel="stylesheet" href="../../css/layout.css">
+  <link rel="stylesheet" href="../../css/question.css">
+</head>
+
+<body>
+  <div class="container">
+    <h1 class="text-center">Diamond Printing Program</h1>
+    <h2>題目</h2>
+    <p>
+      Write a program to read an odd number in the range of 1 to 19 to specify the number of rows in the diamond, and print the corresponding diamond shape.<br>
+      For example, the input number is 5, the corresponding diamond is shown as below:<br><br>
+
+      &emsp;&emsp;★<br>
+      &emsp;★★★<br>
+      ★★★★★<br>
+      &emsp;★★★<br>
+      &emsp;&emsp;★<br><br>
+
+      You may use printf statements that print either a single asterisk (★) or a single blank.<br>
+      Maximize your use of repetition (with nested for statements) and minimize the number of printf statements.<br>
+    </p>
+
+    <ul>
+      <li>請輸入奇數，若為偶數打印"請輸入奇數"</li>
+      <li>列印奇數為 n 層的菱形</li>
+    </ul>
+
+    <hr>
+
+    <h2>輸入</h2>
+    數字:<input id="input1" type="text" value="0"><br>
+
+    <hr>
+
+    <h2>輸出</h2>
+    <div id="output"></div>
+  </div>
+
+  <script src="../../js/bootstrap.bundle.min.js"></script>
+  <script>
+    const input1 = document.querySelector('#input1')
+    const output = document.querySelector('#output')
+    output.innerHTML = null
+
+    input1.addEventListener('change', changeHandler)
+    function changeHandler() {
+      let n = parseInt(input1.value)
+      let result = '';
+      let half = Math.ceil(n / 2)
+      if (n % 2 == 1) {
+        for (let i = 1; i <= half; i++) {
+          for (let space = 1; space <= half - i; space++) {
+            result += '&emsp;'
+          }
+          for (let star = 1; star <= 2 * i - 1; star++) {
+            result += '★'
+          }
+          result += '<br>'
+        }
+
+        for (let i = 1; i <= half - 1; i++) {
+          for (let space = 1; space <= i; space++) {
+            result += '&emsp;'
+          }
+          for (let star = 1; star <= 2 * (half - i) - 1; star++) {
+            result += '★'
+          }
+          result += '<br>'
+        }
+      } else {
+        result = '請輸入奇數'
+      }
+
+      output.innerHTML = result
+    }
+  </script>
+</body>
+
+</html>

@@ -29,32 +29,31 @@
 
     <h2>輸出</h2>
     <div id="output"></div>
-    <script>
-      const input1 = document.querySelector('#input1')
-      const output = document.querySelector('#output')
-      output.innerHTML = null
-
-      input1.addEventListener('change', changeHandler)
-      function changeHandler() {
-        let n = parseInt(input1.value)
-        let c = 0
-        let result = ''
-
-        for (let i = 1; i < n; i++) {
-          if (i % 2 === 0 || i % 3 === 0) {
-            result += ` ${i}`
-            c++
-            if (c % 10 == 0) result += '<br>'
-          }
-        }
-
-        output.innerHTML = result
-      }
-    </script>
   </div>
 
   <script src="../../js/bootstrap.bundle.min.js"></script>
+  <script>
+    const input1 = document.querySelector('#input1')
+    const output = document.querySelector('#output')
+    output.innerHTML = null
 
+    input1.addEventListener('change', changeHandler)
+    function changeHandler() {
+      let n = parseInt(input1.value)
+      let c = 0
+      let result = ''
+
+      for (let i = 1; i < n; i++) {
+        if (i % 2 === 0 || i % 3 === 0) {
+          result += ` ${i}`
+          c++
+          if (c % 10 == 0) result += '<br>'
+        }
+      }
+
+      output.innerHTML = result
+    }
+  </script>
 </body>
 
 </html>

@@ -40,43 +40,41 @@
 
     <h2>輸出</h2>
     <div id="output"></div>
-    <script>
-      const input1 = document.querySelector('#input1')
-      const input2 = document.querySelector('#input2')
-      const input3 = document.querySelector('#input3')
-      const submit = document.querySelector('#submit')
-      const output = document.querySelector('#output')
-      output.innerHTML = null
-
-      submit.addEventListener('click', clickHandler)
-      function clickHandler() {
-        let a = parseInt(input1.value)
-        let b = parseInt(input2.value)
-        let c = parseInt(input3.value)
-        let isFind = false
-        let result = '';
-        limit = a * b * c
-
-        for (let i = 1; i <= limit; i++) {
-          if ((i - 2) % a === 0 && (i + 1) % b === 0 && (i + 2) % c === 0) {
-            isFind = true
-            result = i
-            break
-          }
-        }
-
-        if (isFind === true) {
-          output.innerHTML = result
-        } else {
-          output.innerHTML = '不可能找到'
-        }
-
-      }
-    </script>
   </div>
 
   <script src="../../js/bootstrap.bundle.min.js"></script>
+  <script>
+    const input1 = document.querySelector('#input1')
+    const input2 = document.querySelector('#input2')
+    const input3 = document.querySelector('#input3')
+    const submit = document.querySelector('#submit')
+    const output = document.querySelector('#output')
+    output.innerHTML = null
 
+    submit.addEventListener('click', clickHandler)
+    function clickHandler() {
+      let a = parseInt(input1.value)
+      let b = parseInt(input2.value)
+      let c = parseInt(input3.value)
+      let isFind = false
+      let result = '';
+      limit = a * b * c
+
+      for (let i = 1; i <= limit; i++) {
+        if ((i - 2) % a === 0 && (i + 1) % b === 0 && (i + 2) % c === 0) {
+          isFind = true
+          result = i
+          break
+        }
+      }
+
+      if (isFind === true) {
+        output.innerHTML = result
+      } else {
+        output.innerHTML = '不可能找到'
+      }
+    }
+  </script>
 </body>
 
 </html>

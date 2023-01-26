@@ -31,35 +31,34 @@
 
     <h2>輸出</h2>
     <div id="output"></div>
-    <script>
-      const input1 = document.querySelector('#input1')
-      const output = document.querySelector('#output')
-      output.innerHTML = 0
-
-      input1.addEventListener('change', changeHandler)
-      function changeHandler() {
-        let total = parseInt(input1.value)
-        // 除以一天總共幾秒 換算成 總共幾天(需捨棄小數點)
-        let days = Math.floor(total / (60 * 60 * 24))
-        // 除以一小時 3600 秒 換算成 總共幾小時，一天有 24 小時，再取 24 餘數將剩下的取出(需捨棄小數點)
-        let hours = Math.floor((total / (60 * 60)) % 24)
-        // 除以每分 60 秒 換算成 總共幾分鐘，再取 60 餘數將剩下的取出(需捨棄小數點)
-        let mins = Math.floor(total / 60 % 60)
-        // 取 60 餘數將剩下秒數取出 (需捨棄小數點)
-        let secs = Math.floor(total % 60)
-        let result = `
-            ${days} days<br>
-            ${hours} hours<br>
-            ${mins} minutes<br>
-            ${secs} seconds
-        `
-        output.innerHTML = result
-      }
-    </script>
   </div>
 
   <script src="../../js/bootstrap.bundle.min.js"></script>
+  <script>
+    const input1 = document.querySelector('#input1')
+    const output = document.querySelector('#output')
+    output.innerHTML = 0
 
+    input1.addEventListener('change', changeHandler)
+    function changeHandler() {
+      let total = parseInt(input1.value)
+      // 除以一天總共幾秒 換算成 總共幾天(需捨棄小數點)
+      let days = Math.floor(total / (60 * 60 * 24))
+      // 除以一小時 3600 秒 換算成 總共幾小時，一天有 24 小時，再取 24 餘數將剩下的取出(需捨棄小數點)
+      let hours = Math.floor((total / (60 * 60)) % 24)
+      // 除以每分 60 秒 換算成 總共幾分鐘，再取 60 餘數將剩下的取出(需捨棄小數點)
+      let mins = Math.floor(total / 60 % 60)
+      // 取 60 餘數將剩下秒數取出 (需捨棄小數點)
+      let secs = Math.floor(total % 60)
+      let result = `
+          ${days} days<br>
+          ${hours} hours<br>
+          ${mins} minutes<br>
+          ${secs} seconds
+      `
+      output.innerHTML = result
+    }
+  </script>
 </body>
 
 </html>

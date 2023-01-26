@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ASCII表</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../css/bootstrap.css">
+  <link rel="stylesheet" href="../../css/layout.css">
+  <link rel="stylesheet" href="../../css/question.css">
+</head>
+
+<body>
+  <div class="container">
+    <h1 class="text-center">ASCII表</h1>
+    <h2>題目</h2>
+    <p>使用 String.fromCharCode(index) 輸出 32 到 127 位置 ASCII 字元，每 16 個字換一行</p>
+
+    <hr>
+
+    <h2>輸出</h2>
+    <div id="output"></div>
+  </div>
+
+  <script src="../../js/bootstrap.bundle.min.js"></script>
+  <script>
+    const input1 = document.querySelector('#input1')
+    const output = document.querySelector('#output')
+    output.innerHTML = null
+
+    window.addEventListener('load', loadHandler)
+    function loadHandler() {
+      let result = ''
+      let startIndex = 32
+      let endIndex = 127
+      let c = 1;
+      for (let i = startIndex; i <= endIndex; i++) {
+        if (c % 16 === 0) {
+          result += String.fromCharCode(i) + '<br>'
+        } else {
+          result += String.fromCharCode(i)
+        }
+        c++
+      }
+      output.innerHTML = result
+    }
+  </script>
+</body>
+
+</html>

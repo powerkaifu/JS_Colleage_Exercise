@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>以0為結尾的所有個數相加</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../css/bootstrap.css">
+  <link rel="stylesheet" href="../../css/layout.css">
+  <link rel="stylesheet" href="../../css/question.css">
+</head>
+
+<body>
+  <div class="container">
+    <h1 class="text-center">以0為結尾的所有個數相加</h1>
+    <h2>題目</h2>
+    <p>
+      請寫一個程式可以將所有輸入的整數相加，該輸入以 0 為結束<br><br>
+      例如以下的輸入<br>
+      1 2 3 4 5 0<br><br>
+      最後一個 0 表示輸入結束，所以 0 前面五個整數相加的結果為 15
+    </p>
+
+    <hr>
+
+    <h2>輸入</h2>
+    <button id="submit">開始</button>
+
+    <hr>
+
+    <h2>輸出</h2>
+    <div id="output"></div>
+  </div>
+
+  <script src="../../js/bootstrap.bundle.min.js"></script>
+  <script>
+    const input1 = document.querySelector('#input1')
+    const output = document.querySelector('#output')
+    output.innerHTML = null
+
+    submit.addEventListener('click', clickHandler)
+    function clickHandler() {
+      let result = 0;
+      let i = 1;
+      while (true) {
+        let num = parseInt(prompt(`請輸入 ${i} 數字`))
+        result += num
+        if (num === 0) break
+        i++
+      }
+      output.innerHTML = result
+    }
+  </script>
+</body>
+
+</html>

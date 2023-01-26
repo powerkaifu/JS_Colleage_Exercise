@@ -27,43 +27,42 @@
 
     <h2>輸出</h2>
     <div id="output"></div>
-    <script>
-      const input1 = document.querySelector('#input1')
-      const output = document.querySelector('#output')
-      output.innerHTML = null
-
-      input1.addEventListener('change', changeHandler)
-      function changeHandler() {
-        let n = parseInt(input1.value)
-        let result = '';
-        switch (n) {
-          case 1:
-          case 3:
-          case 5:
-          case 7:
-          case 8:
-          case 10:
-          case 12:
-            result = '大月'
-            break
-          case 2:
-          case 4:
-          case 6:
-          case 9:
-          case 11:
-            result = '小月'
-            break
-          default:
-            result = '這是錯誤的月份'
-            break;
-        }
-        output.innerHTML = result
-      }
-    </script>
   </div>
 
   <script src="../../js/bootstrap.bundle.min.js"></script>
+  <script>
+    const input1 = document.querySelector('#input1')
+    const output = document.querySelector('#output')
+    output.innerHTML = null
 
+    input1.addEventListener('change', changeHandler)
+    function changeHandler() {
+      let n = parseInt(input1.value)
+      let result = '';
+      switch (n) {
+        case 1:
+        case 3:
+        case 5:
+        case 7:
+        case 8:
+        case 10:
+        case 12:
+          result = '大月'
+          break
+        case 2:
+        case 4:
+        case 6:
+        case 9:
+        case 11:
+          result = '小月'
+          break
+        default:
+          result = '這是錯誤的月份'
+          break;
+      }
+      output.innerHTML = result
+    }
+  </script>
 </body>
 
 </html>

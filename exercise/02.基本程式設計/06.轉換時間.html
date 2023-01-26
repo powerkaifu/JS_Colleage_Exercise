@@ -25,31 +25,27 @@
 
     <h2>輸出</h2>
     <div id="output"></div>
-
-    <script>
-      const input1 = document.querySelector('#input1')
-      const output = document.querySelector('#output')
-      output.innerHTML = 0
-
-      input1.addEventListener('change', changeHandler)
-      function changeHandler() {
-        let total = Number(input1.value)
-        let d = Math.floor(total / (60 * 60 * 24))
-        let h = Math.floor(total / 60 / 60 % 24)
-        let m = Math.floor(total / 60 % 60)
-        let s = Math.floor(total % 60 % 60)
-        output.innerHTML = `
-          你輸入 ${total} 秒<br>
-          可以換算成 ${d} 天 ${h} 時 ${m} 分 ${s} 秒
-        `
-      }
-
-
-    </script>
   </div>
 
   <script src="../../js/bootstrap.bundle.min.js"></script>
+  <script>
+    const input1 = document.querySelector('#input1')
+    const output = document.querySelector('#output')
+    output.innerHTML = 0
 
+    input1.addEventListener('change', changeHandler)
+    function changeHandler() {
+      let total = Number(input1.value)
+      let d = Math.floor(total / (60 * 60 * 24))
+      let h = Math.floor(total / 60 / 60 % 24)
+      let m = Math.floor(total / 60 % 60)
+      let s = Math.floor(total % 60 % 60)
+      output.innerHTML = `
+        你輸入 ${total} 秒<br>
+        可以換算成 ${d} 天 ${h} 時 ${m} 分 ${s} 秒
+      `
+    }
+  </script>
 </body>
 
 </html>

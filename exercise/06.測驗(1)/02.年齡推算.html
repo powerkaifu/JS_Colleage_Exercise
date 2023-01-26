@@ -36,26 +36,25 @@
 
     <h2>輸出</h2>
     <div id="output"></div>
-    <script>
-      const input1 = document.querySelector('#input1')
-      const output = document.querySelector('#output')
-      output.innerHTML = null
-
-      input1.addEventListener('change', changeHandler)
-      function changeHandler() {
-        let smallGreen = parseInt(input1.value)
-        let bigGreen = smallGreen + 3
-        let blue = smallGreen * 2 - 5
-        let a = Math.floor(blue / 10)
-        let b = bigGreen % 10
-        let purple = a * 10 + b
-        output.innerHTML = purple
-      }
-    </script>
   </div>
 
   <script src="../../js/bootstrap.bundle.min.js"></script>
+  <script>
+    const input1 = document.querySelector('#input1')
+    const output = document.querySelector('#output')
+    output.innerHTML = null
 
+    input1.addEventListener('change', changeHandler)
+    function changeHandler() {
+      let smallGreen = parseInt(input1.value)
+      let bigGreen = smallGreen + 3
+      let blue = smallGreen * 2 - 5
+      let a = Math.floor(blue / 10)
+      let b = bigGreen % 10
+      let purple = a * 10 + b
+      output.innerHTML = purple
+    }
+  </script>
 </body>
 
 </html>
