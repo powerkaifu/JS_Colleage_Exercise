@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>費式數列</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../css/bootstrap.css">
+  <link rel="stylesheet" href="../../css/layout.css">
+  <link rel="stylesheet" href="../../css/question.css">
+</head>
+
+<body>
+  <div class="container">
+    <h1 class="text-center">費式數列</h1>
+    <h2>題目</h2>
+    <p>
+      費氏數列定義如下 f(0)=0, f(1)=1, f(n)=f(n-1)+f(n-2);請從螢幕輸入一個正整數n，輸出第n 個費式數列的值。<br>
+      以下是從第0個費式數列開始的範例:<br><br>
+
+      0 1 1 2 3 5 8 13 21 34 ...<br><br>
+
+      第0個費式數列為0<br>
+      第1個費式數列為1<br>
+      第2個費式數列為1<br>
+      第3個費式數列為2<br>
+      第4個費式數列為3<br>
+      第5個費式數列為5<br>
+      第6個費式數列為8<br>
+      依此類推。
+    </p>
+
+    <hr>
+
+    <h2>輸入</h2>
+    數字:<input id="input1" type="text" value="0"><br>
+
+    <hr>
+
+    <h2>輸出</h2>
+    <div id="output"></div>
+  </div>
+
+  <script src="../../js/bootstrap.bundle.min.js"></script>
+  <script>
+    const input1 = document.querySelector('#input1')
+    const output = document.querySelector('#output')
+    output.innerHTML = null
+
+    input1.addEventListener('change', changeHandler)
+    function changeHandler() {
+      let n = parseInt(input1.value)
+      let result = '';
+
+      output.innerHTML = result
+    }
+  </script>
+</body>
+
+</html>

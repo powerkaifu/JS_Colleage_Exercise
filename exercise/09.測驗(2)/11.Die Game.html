@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Die Game</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../css/bootstrap.css">
+  <link rel="stylesheet" href="../../css/layout.css">
+  <link rel="stylesheet" href="../../css/question.css">
+</head>
+
+<body>
+  <div class="container">
+    <h1 class="text-center">Die Game</h1>
+    <h2>題目</h2>
+    <p>
+      有玩過骰子吧！就是那種正立方體，打麻將或在路邊攤跟老闆賭香腸時會用到的小玩意兒（也許有人考試時會用到）。現在要請你來模擬一個骰子的遊戲。<br><br>
+      當遊戲開始時，一顆骰子被放在桌子上。在遊戲的過程中，這骰子會被莊家翻轉。當這骰子停止翻轉的時候，如果你可以猜中朝上那一面的點數的話，你就贏得這次的遊戲。<br><br>
+      現在你被要求寫一個程式來模擬這個遊戲。為了簡單起見，我們假設這顆骰子不會滑動也不會跳動，他只能在桌面上以東南西北等4個方向滾動。在遊戲一開始時，莊家把骰子按照一定的方向放置於桌面中央，使得1,2,3三面分別為朝上，朝北，及朝西。至於另外三面（4、5、6）朝何方，我並不想多說。但是你應該要知道一個定律：對一顆骰子而言，相對的2面上的點數和總是等於7.<br><br>
+
+      你的程式應該要接收一連串的命令（1表示north, 2表示east, 3表示south, 4表示west），代表骰子如何滾動。<br>
+      例如：north代表骰子朝北滾動，也就是說本來朝上的一面會變成朝北，本來朝北的一面變成朝下，依此類推。<br>
+      你可以假設桌子無限大，所以在遊戲的過程中骰子都不會掉到桌下。<br><br>
+
+      [Input]<br>
+      輸入含有多組測試資料。每一組測試資料的第1列有一個正整數 n（n <= 1024），代表接下來有多少個轉動的命令。<br>
+        接下來的n列，每列有一個動作（1(north), 2(east), 3(south), 4(west)其中一個）。n=0時代表輸入結束。請參考Sample Input。<br><br>
+        [Output]<br>
+        每組測試資料輸出骰子動作結束時，朝上的那一面點數是多少？ <br><br>
+        [Sample Input] 1 1 3 1 2 3 0 <br><br>
+
+        [Sample output] 5 1
+    </p>
+
+    <hr>
+
+    <h2>輸入</h2>
+    數字:<input id="input1" type="text" value="0"><br>
+
+    <hr>
+
+    <h2>輸出</h2>
+    <div id="output"></div>
+  </div>
+
+  <script src="../../js/bootstrap.bundle.min.js"></script>
+  <script>
+    const input1 = document.querySelector('#input1')
+    const output = document.querySelector('#output')
+    output.innerHTML = null
+
+    input1.addEventListener('change', changeHandler)
+    function changeHandler() {
+      let n = parseInt(input1.value)
+      let result = '';
+
+      output.innerHTML = result
+    }
+  </script>
+</body>
+
+</html>

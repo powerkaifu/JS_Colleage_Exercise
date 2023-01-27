@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>二十數最小值/最大值以及最小值/最大值的和</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../css/bootstrap.css">
+  <link rel="stylesheet" href="../../css/layout.css">
+  <link rel="stylesheet" href="../../css/question.css">
+</head>
+
+<body>
+  <div class="container">
+    <h1 class="text-center">二十數最小值/最大值以及最小值/最大值的和</h1>
+    <h2>題目</h2>
+    <p>輸出以下 20 個整數的最小值和最大值，以及所有最小值和最大值的相加結果。</p>
+    <p>16 3 3 18 10 9 10 18 8 18 3 5 2 9 12 6 7 4 12 19</p>
+
+    <hr>
+
+    <h2>輸出</h2>
+    <div id="output"></div>
+  </div>
+
+  <script src="../../js/bootstrap.bundle.min.js"></script>
+  <script>
+    const arr = [16, 3, 3, 18, 10, 9, 10, 18, 8, 18, 3, 5, 19, 9, 12, 6, 7, 4, 12, 19]
+    const output = document.querySelector('#output')
+    output.innerHTML = null
+
+    window.addEventListener('load', loadHandler)
+    function loadHandler() {
+      let result = null;
+
+      arr.sort((a, b) => {
+        return a - b
+      })
+
+      let minCount = 0
+      let minValue = arr[0]
+      let maxCount = 0
+      let maxValue = arr[arr.length - 1]
+
+      for (let i = 0; i < arr.length; i++) {
+        if (minValue === arr[i]) minCount++
+      }
+
+      for (let i = 0; i < arr.length; i++) {
+        if (maxValue === arr[i]) maxCount++
+      }
+
+      result = `
+        最小數為 ${minValue} <br>
+        最小數的總和為 ${minValue * minCount} <br>
+        最大數為 ${maxValue} <br>
+        最大數的總和為 ${maxValue * maxCount} <br>
+      `
+
+      output.innerHTML = result
+    }
+  </script>
+</body>
+
+</html>

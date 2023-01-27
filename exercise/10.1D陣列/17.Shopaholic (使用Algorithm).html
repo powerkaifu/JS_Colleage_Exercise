@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shopaholic (使用Algorithm)</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../css/bootstrap.css">
+  <link rel="stylesheet" href="../../css/layout.css">
+  <link rel="stylesheet" href="../../css/question.css">
+</head>
+
+<body>
+  <div class="container">
+    <h1 class="text-center">Shopaholic (使用Algorithm)</h1>
+    <h2>題目</h2>
+    <p>
+      林希是個購物狂。每次只要有買二送一的折扣，她就像瘋了一樣要買下店裡所有的商品。你已經放棄治療她的病了，但是想減少她的支出。<br><br>
+      你知道買二送一所送的一定是結帳商品中最便宜的那幾樣。<br><br>
+      比如說，你的朋友拿了價值為 400, 350, 300, 250, 200, 150, 及 100 的七樣商品到櫃檯去結帳，她就得付 1500 元。她省下了最便宜的兩樣商品的價錢，也就是 250 元。如果她分三次去結帳，她可以省下更多的錢。比如說，她先拿400, 300 和 250 的去結，第一次就可以省下
+      250 元。第二次她只拿 150 元的去結，沒有折扣。但是第三次她拿 350, 200, 和 100 的去結，又省了 100 元，總共省下了 350 元。<br><br>
+
+      你的工作便是找出林希最多可以省多少錢。<br><br>
+
+      輸入說明 ：<br>
+      第一行是林希買的商品數 1 ≤ n ≤ 200。下一行則是這些商品的價格 1 ≤ pi ≤ 2000。<br><br>
+
+      輸出說明 ：<br>
+      印出如果林希適當地分次結帳時所能省下的最大金額。<br><br>
+
+      範例輸入 ：<br>
+      6<br>
+      400 100 200 350 300 250<br><br>
+
+      範例輸出 ：<br>
+      400
+    </p>
+
+    <hr>
+
+    <h2>輸入</h2>
+    數字:<input id="input1" type="text" value="0"><br>
+
+    <hr>
+
+    <h2>輸出</h2>
+    <div id="output"></div>
+  </div>
+
+  <script src="../../js/bootstrap.bundle.min.js"></script>
+  <script>
+    const input1 = document.querySelector('#input1')
+    const output = document.querySelector('#output')
+    output.innerHTML = null
+
+    input1.addEventListener('change', changeHandler)
+    function changeHandler() {
+      let n = parseInt(input1.value)
+      let result = null;
+
+      output.innerHTML = result
+    }
+  </script>
+</body>
+
+</html>

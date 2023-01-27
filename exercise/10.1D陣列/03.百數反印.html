@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>百數反印</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../css/bootstrap.css">
+  <link rel="stylesheet" href="../../css/layout.css">
+  <link rel="stylesheet" href="../../css/question.css">
+</head>
+
+<body>
+  <div class="container">
+    <h1 class="text-center">反印陣列元素</h1>
+    <h2>題目</h2>
+    <p>將這些元素放入陣列，並且反印它們。<br>
+      10&emsp;20&emsp;30&emsp;40&emsp;50&emsp;60&emsp;70&emsp;80</p>
+
+    <hr>
+
+    <h2>輸出</h2>
+    <div id="output"></div>
+  </div>
+
+  <script src="../../js/bootstrap.bundle.min.js"></script>
+  <script>
+    const output = document.querySelector('#output')
+    output.innerHTML = null
+
+    window.addEventListener('load', loadHandler)
+    function loadHandler() {
+      let result = '';
+      const arr = [10, 20, 30, 40, 50, 60, 70, 80]
+      for (let i = arr.length - 1; i >= 0; i--) {
+        result += `${arr[i]}&emsp;`
+      }
+
+      output.innerHTML = result
+    }
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>檢查數值是否有重複</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../css/bootstrap.css">
+  <link rel="stylesheet" href="../../css/layout.css">
+  <link rel="stylesheet" href="../../css/question.css">
+</head>
+
+<body>
+  <div class="container">
+    <h1 class="text-center">檢查數值是否有重複</h1>
+    <h2>題目</h2>
+    <p>
+      問題描述 ：<br>
+      給予一個由1到N的所有整數構成的數列，不依大小排列。 寫一函數檢查此數列是否每個數值只出現一次。<br><br>
+
+      輸入說明 ：<br>
+      輸入分為兩行，第一行是一個介於1與128間的正整數，代表第二行中數列中的數字個數。<br>
+      第二行是由空白鍵分隔開的數字序列，不超過128個數。每一個數值介於1到序列數字個數的整數。<br><br>
+
+      輸出說明 ：<br>
+      若是每個數字剛好只出現一次則輸出1，輸出0表示其中有重複的數字。
+    </p>
+
+    <hr>
+
+    <h2>輸入</h2>
+    數字:<input id="input1" type="text" value="0"><br>
+
+    <hr>
+
+    <h2>輸出</h2>
+    <div id="output"></div>
+  </div>
+
+  <script src="../../js/bootstrap.bundle.min.js"></script>
+  <script>
+    const input1 = document.querySelector('#input1')
+    const output = document.querySelector('#output')
+    output.innerHTML = null
+
+    input1.addEventListener('change', changeHandler)
+    function changeHandler() {
+      let n = parseInt(input1.value)
+      let result = null;
+
+      output.innerHTML = result
+    }
+  </script>
+</body>
+
+</html>

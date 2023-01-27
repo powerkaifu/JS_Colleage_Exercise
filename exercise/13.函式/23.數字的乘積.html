@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>數字的乘積</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../css/bootstrap.css">
+  <link rel="stylesheet" href="../../css/layout.css">
+  <link rel="stylesheet" href="../../css/question.css">
+</head>
+
+<body>
+  <div class="container">
+    <h1 class="text-center">數字的乘積(測驗二題目)</h1>
+    <h2>題目</h2>
+    <p>
+      寫一個程式如下:<br>
+      接受一整數n，將n的所有位數(個位數、十位數、百位數等)相乘，回傳該乘積。<br>
+      測試範例如下:<br>
+    <table class="table table-striped">
+      <tr>
+        <td>輸入</td>
+        <td>輸出</td>
+      </tr>
+      <tr>
+        <td>123</td>
+        <td>6</td>
+      </tr>
+      <tr>
+        <td>246</td>
+        <td>48</td>
+      </tr>
+    </table>
+    </p>
+
+    <hr>
+
+    <h2>輸入</h2>
+    數字:<input id="input1" type="text" value="0"><br>
+
+    <hr>
+
+    <h2>輸出</h2>
+    <div id="output"></div>
+  </div>
+
+  <script src="../../js/bootstrap.bundle.min.js"></script>
+  <script>
+    const input1 = document.querySelector('#input1')
+    const output = document.querySelector('#output')
+    output.innerHTML = null
+
+    input1.addEventListener('change', changeHandler)
+    function changeHandler() {
+      let n = parseInt(input1.value)
+      let result = null;
+
+      output.innerHTML = result
+    }
+  </script>
+</body>
+
+</html>
