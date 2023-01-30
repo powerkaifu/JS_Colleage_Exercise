@@ -24,16 +24,13 @@
       國文成績為所有國文成績相加除以 x ，英文成績為所有英文成績相加除以 x ，數學成績為所有數學成績相加除以 x 。<br><br>
 
       輸入說明：<br>
-      第一列輸入一個正整數 n 。其後有 n 列，每一列代表學生國文、英文，數學成績。<br><br>
+      國文為 80, 86, 90<br>
+      英文為 78, 82, 92<br>
+      數學為 88, 84, 82<br><br>
 
       輸出說明：<br>
-      只有一列表全體平均、國文平均、英文平均、數學平均。
+      全體平均、國文平均、英文平均、數學平均。(取到小數第二位)
     </p>
-
-    <hr>
-
-    <h2>輸入</h2>
-    x:<input id="input1" type="text" value="0"><br>
 
     <hr>
 
@@ -43,14 +40,37 @@
 
   <script src="../../js/bootstrap.bundle.min.js"></script>
   <script>
-    const input1 = document.querySelector('#input1')
     const output = document.querySelector('#output')
     output.innerHTML = null
 
-    input1.addEventListener('change', changeHandler)
-    function changeHandler() {
-      let n = parseInt(input1.value)
+    window.addEventListener('load', loadHandler)
+    function loadHandler() {
       let result = null;
+      const c = [80, 86, 90]
+      const e = [78, 82, 91]
+      const m = [88, 84, 82]
+
+      let cSum = 0
+      let eSum = 0
+      let mSum = 0
+
+      for (let i = 0; i < 3; i++) {
+        cSum += c[i]
+        eSum += e[i]
+        mSum += m[i]
+      }
+
+      let totalAvg = (cSum + eSum + mSum) / (3 * 3)
+      let cAvg = cSum / 3
+      let eAvg = eSum / 3
+      let mAvg = mSum / 3
+
+      result = `
+        全體平均:${totalAvg.toFixed(2)}<br>
+        國文平均:${cAvg.toFixed(2)}<br>
+        英文平均:${eAvg.toFixed(2)}<br>
+        數學平均:${mAvg.toFixed(2)}<br>
+      `
 
       output.innerHTML = result
     }
