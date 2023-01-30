@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>百數最小值所在地</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../css/bootstrap.css">
+  <link rel="stylesheet" href="../../css/layout.css">
+  <link rel="stylesheet" href="../../css/question.css">
+</head>
+
+<body>
+  <div class="container">
+    <h1 class="text-center">百數最小值所在地</h1>
+    <h2>題目</h2>
+    <p>一百個正整數，將這些數最小值的 index 印出。<br>
+      [
+      28, 89, 72, 96, 42, 50, 83, 63, 25, 47,
+      14, 62, 21, 66, 99, 41, 10, 17, 33, 72,
+      17, 23, 85, 44, 37, 79, 55, 62, 17, 89,
+      46, 86, 21, 59, 86, 52, 45, 92, 49, 54,
+      43, 69, 31, 64, 88, 41, 99, 27, 40, 34,
+      94, 74, 53, 55, 42, 42, 49, 69, 24, 91,
+      25, 54, 75, 76, 96, 58, 66, 15, 97, 61,
+      63, 50, 43, 37, 92, 40, 82, 46, 13, 66,
+      14, 70, 17, 76, 14, 75, 22, 98, 99, 75,
+      70, 72, 88, 76, 76, 36, 39, 12, 13, 59
+      ]
+      <br>
+
+    </p>
+
+    <hr>
+
+    <h2>輸出</h2>
+    <div id="output"></div>
+  </div>
+
+  <script src="../../js/bootstrap.bundle.min.js"></script>
+  <script>
+    const output = document.querySelector('#output')
+    output.innerHTML = null
+    const arr = [
+      28, 89, 72, 96, 42, 50, 83, 63, 25, 47,
+      14, 62, 21, 66, 99, 41, 10, 17, 33, 72,
+      17, 23, 85, 44, 37, 79, 55, 62, 17, 89,
+      46, 86, 21, 59, 86, 52, 45, 92, 49, 54,
+      43, 69, 31, 64, 88, 41, 99, 27, 40, 34,
+      94, 74, 53, 55, 42, 42, 49, 69, 24, 91,
+      25, 54, 75, 76, 96, 58, 66, 15, 97, 61,
+      63, 50, 43, 37, 92, 40, 82, 46, 13, 66,
+      14, 70, 17, 76, 14, 75, 22, 98, 99, 75,
+      70, 72, 88, 76, 76, 36, 39, 12, 13, 59
+    ]
+
+    window.addEventListener('load', loadHandler)
+    function loadHandler() {
+      let minIndex = 0
+      let min = arr[0]
+
+      for (let i = 1; i < arr.length; i++) {
+        if (arr[i] < min) {
+          min = arr[i]
+          minIndex = i
+        }
+      }
+
+      output.innerHTML = minIndex
+    }
+  </script>
+</body>
+
+</html>

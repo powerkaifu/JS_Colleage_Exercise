@@ -19,19 +19,19 @@
     <p>
       請用 switch 來寫<br>
       CPE參賽中，<br>
-      解出6~7題者，等第 A+。<br>
-      解出4~5題者，等第 A。<br>
-      解出3題者，等第 A-。<br>
-      解出2題者，等第 B。<br>
-      解出1題者，等第 C。<br>
-      解出0題者，等第 F。<br>
+      解出 6~7 題者，等第 A+。<br>
+      解出 4~5 題者，等第 A。<br>
+      解出 3 題者，等第 A-。<br>
+      解出 2 題者，等第 B。<br>
+      解出 1 題者，等第 C。<br>
+      解出 0 題者，等第 F。<br>
       輸入解題數，輸出其等第。
     </p>
 
     <hr>
 
     <h2>輸入</h2>
-    數字:<input id="input1" type="text" value="0"><br>
+    答題正確數目:<input id="input1" type="text" value="0"><br>
 
     <hr>
 
@@ -47,8 +47,32 @@
 
     input1.addEventListener('change', changeHandler)
     function changeHandler() {
-      let n = parseInt(input1.value)
+      let answer = parseInt(input1.value)
       let result = '';
+      switch (answer) {
+        case 0:
+          result = 'F'
+          break;
+        case 1:
+          result = 'C'
+          break;
+        case 2:
+          result = 'B'
+          break;
+        case 3:
+          result = 'A-'
+          break;
+        case 4:
+        case 5:
+          result = 'A'
+          break;
+        case 6:
+        case 7:
+          result = 'A+'
+          break;
+        default:
+          break;
+      }
 
       output.innerHTML = result
     }

@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>最遠的兩點</title>
+  <title>成績統計</title>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../../css/bootstrap.css">
   <link rel="stylesheet" href="../../css/layout.css">
@@ -14,23 +14,26 @@
 
 <body>
   <div class="container">
-    <h1 class="text-center">最遠的兩點</h1>
+    <h1 class="text-center">成績統計</h1>
     <h2>題目</h2>
     <p>
-      問題描述 ：<br>
-      寫一個程式讀入各點座標，找出其中距離最遠的兩個點，輸出此兩點間距離的平方值。例如：若最遠的兩點座標分別為1, -1和2, 3，因 (2-1)2+(3-(-1))2=1+16=17，故輸出17。<br><br>
+      每次考完試，通常都是老師、助教惡夢的開始，除了要改考卷以外，統計成績也是一件麻煩的事，<br>
+      現在請寫一個程式可以用來處理統計成績的問題。<br><br>
+      須統計的科目包含：國文、英文、數學，裡面要可以計算全班同學的平均分數，以及各科平均分數。<br>
+      假設有 x 個人考國文、英文、數學，則全體平均為全部成績相加除以 3*x，<br>
+      國文成績為所有國文成績相加除以 x ，英文成績為所有英文成績相加除以 x ，數學成績為所有數學成績相加除以 x 。<br><br>
 
-      輸入說明 ：<br>
-      第一行為一個正整數N，代表共有幾組測試資料。之後接下來有N行，每行中第一個為正整數M（ 2 ≤ M ≤ 20 ），代表該組資料共有M個點，接下來有2M個整數，分別代表各頂點的x和y座標。<br><br>
+      輸入說明：<br>
+      第一列輸入一個正整數 n 。其後有 n 列，每一列代表學生國文、英文，數學成績。<br><br>
 
-      輸出說明 ：<br>
-      每個測試資料結果輸出於一行。
+      輸出說明：<br>
+      只有一列表全體平均、國文平均、英文平均、數學平均。
     </p>
 
     <hr>
 
     <h2>輸入</h2>
-    數字:<input id="input1" type="text" value="0"><br>
+    x:<input id="input1" type="text" value="0"><br>
 
     <hr>
 

@@ -16,7 +16,7 @@
   <div class="container">
     <h1 class="text-center">畫n層三角形</h1>
     <h2>題目</h2>
-    <p>輸入一整數n，依結果畫出一個n層的三角形。</p>
+    <p>輸入一整數 n，依結果畫出一個 n 層的三角形。</p>
 
     <hr>
 
@@ -40,8 +40,31 @@
       let n = parseInt(input1.value)
       let result = '';
 
+      for (let i = 1; i <= n; i++) {
+
+        for (let space = 1; space <= n - i; space++) {
+          result += '&emsp;'
+        }
+
+        for (let num1 = 1; num1 <= i; num1++) {
+          let str = num1 + ''
+          str = String.fromCharCode(str.charCodeAt() + 65248)
+          result += str
+        }
+
+        for (let num2 = i - 1; num2 > 0; num2--) {
+          let str = num2 + ''
+          str = String.fromCharCode(str.charCodeAt() + 65248)
+          result += str
+        }
+
+        result += '<br>'
+      }
+
       output.innerHTML = result
     }
+
+
   </script>
 </body>
 

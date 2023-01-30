@@ -18,20 +18,11 @@
     <h2>題目</h2>
     <p>
       問題描述 ：<br>
-      給予一個由1到N的所有整數構成的數列，不依大小排列。 寫一函數檢查此數列是否每個數值只出現一次。<br><br>
-
-      輸入說明 ：<br>
-      輸入分為兩行，第一行是一個介於1與128間的正整數，代表第二行中數列中的數字個數。<br>
-      第二行是由空白鍵分隔開的數字序列，不超過128個數。每一個數值介於1到序列數字個數的整數。<br><br>
-
+      給予一個陣列 ，元素不依大小排列。例如:[7, 8, 6, 9, 5, 1, 2, 4, 3]<br>
+      檢查此數列是否每個數值只出現一次。<br><br>
       輸出說明 ：<br>
-      若是每個數字剛好只出現一次則輸出1，輸出0表示其中有重複的數字。
+      若是每個數字剛好只出現一次則輸出 1，輸出 0 表示其中有重複的數字。
     </p>
-
-    <hr>
-
-    <h2>輸入</h2>
-    數字:<input id="input1" type="text" value="0"><br>
 
     <hr>
 
@@ -41,14 +32,30 @@
 
   <script src="../../js/bootstrap.bundle.min.js"></script>
   <script>
-    const input1 = document.querySelector('#input1')
+    const arr = [7, 8, 6, 9, 5, 1, 2, 4, 3]
     const output = document.querySelector('#output')
     output.innerHTML = null
 
-    input1.addEventListener('change', changeHandler)
-    function changeHandler() {
-      let n = parseInt(input1.value)
+    window.addEventListener('load', loadHandler)
+    function loadHandler() {
       let result = null;
+      let isRepeat = false
+
+      for (let i = 0; i < arr.length; i++) {
+        for (let j = 0; j < arr.length; j++) {
+          if (i === j) continue
+          if (arr[i] === arr[j]) {
+            isRepeat = true
+            break
+          }
+        }
+      }
+
+      if (isRepeat) {
+        result = 0
+      } else {
+        result = 1
+      }
 
       output.innerHTML = result
     }

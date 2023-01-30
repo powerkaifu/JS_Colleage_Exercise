@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>百數最小值所在地</title>
+  <title>第n個質數</title>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../../css/bootstrap.css">
   <link rel="stylesheet" href="../../css/layout.css">
@@ -14,9 +14,28 @@
 
 <body>
   <div class="container">
-    <h1 class="text-center">百數最小值所在地</h1>
+    <h1 class="text-center">第n個質數</h1>
     <h2>題目</h2>
-    <p>輸入一百個正整數，將這些數最小值的一個所在地印出。</p>
+    <p>
+      第 1 個質數是 2，第 2 個質數是 3，第 3 個質數是 5，現在輸入 k，程式須輸出第k個質數。k 小於 1000。<br>
+      輸入說明：<br>
+      有好幾組測試資料。每組測試資料皆有一個整數 n，代表要計算第n個質數。當 n=0 則代表輸入結束。<br><br>
+
+      輸出說明：<br>
+      對於每組測試資料，輸出其對應的質數。<br><br>
+
+      輸入範例：<br>
+      1<br>
+      2<br>
+      10<br>
+      20<br><br>
+
+      輸出範例：<br>
+      2<br>
+      3<br>
+      29<br>
+      71<br>
+    </p>
 
     <hr>
 
@@ -38,7 +57,24 @@
     input1.addEventListener('change', changeHandler)
     function changeHandler() {
       let n = parseInt(input1.value)
-      let result = null;
+      let result = '';
+      let count = 0;
+
+      for (let i = 2; i <= 1000; i++) {
+        let isPrime = true
+
+        for (let j = 2; j < i; j++) {
+          if (i % j === 0) {
+            isPrime = false
+            break
+          }
+        }
+
+        if (isPrime) {
+          count++
+          if (n === count) result = i
+        }
+      }
 
       output.innerHTML = result
     }

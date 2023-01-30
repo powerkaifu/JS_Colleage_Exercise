@@ -18,7 +18,7 @@
     <h2>題目</h2>
     <p>
       一個數如果恰好等於它的因數之和，這個數就稱為"完美數"（ perfect number ）。<br>
-      例如 6=1 ＋ 2 ＋ 3 ，因 1 、 2 與 3 都是 6 的因數，因而 6 是完美數。<br>
+      例如 6 = 1 ＋ 2 ＋ 3 ，因 1 、 2 與 3 都是 6 的因數，因而 6 是完美數。<br>
       試撰寫一程式，輸入一個正整數 N ，找 1~N 的完美數。<br><br>
 
       輸入說明：<br>
@@ -60,6 +60,17 @@
     function changeHandler() {
       let n = parseInt(input1.value)
       let result = '';
+
+      // 完美數從 6 開始
+      for (let i = 6; i <= n; i++) {
+        let sum = 0
+        for (let j = 1; j < i; j++) {
+          if (i % j === 0) {
+            sum += j
+          }
+        }
+        if (sum === i) result += i + '&emsp;'
+      }
 
       output.innerHTML = result
     }

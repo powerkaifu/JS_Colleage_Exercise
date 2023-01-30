@@ -17,20 +17,14 @@
     <h1 class="text-center">過半元素</h1>
     <h2>題目</h2>
     <p>
-      一個含 N 個整數的序列中，出現頻率超過 N/2 的整數稱為『過半元素』。寫一個程式求一整數序列是否有過半元素。 N不超過200個。<br><br>
-
-      輸入說明 ：<br>
-      一整數序列以空白鍵隔開數字。<br><br>
+      一個 N 元素陣列中，出現頻率超過 N/2 的整數稱為『過半元素』。<br>
+      寫一個程式求一整數序列是否有過半元素。<br>
+      例如:[23, 34, 34, 5, 5, 34, 34]，可自行修改資料測試<br><br>
 
       輸出說明 ：<br>
-      若有 過半元素， 輸出該數； 否則輸出 No 。<br>
+      若有過半元素， 輸出該數； 否則輸出 No。<br>
 
     </p>
-
-    <hr>
-
-    <h2>輸入</h2>
-    數字:<input id="input1" type="text" value="0"><br>
 
     <hr>
 
@@ -40,16 +34,35 @@
 
   <script src="../../js/bootstrap.bundle.min.js"></script>
   <script>
-    const input1 = document.querySelector('#input1')
+    const arr = [23, 34, 34, 5, 5, 34, 34]
     const output = document.querySelector('#output')
     output.innerHTML = null
 
-    input1.addEventListener('change', changeHandler)
-    function changeHandler() {
-      let n = parseInt(input1.value)
-      let result = null;
+    window.addEventListener('load', loadHandler)
+    function loadHandler() {
+      let result = 0;
+      let isOver = false;
+      for (let i = 0; i < arr.length; i++) {
+        let count = 0;
 
-      output.innerHTML = result
+        for (let j = 0; j < arr.length; j++) {
+          if (arr[i] === arr[j]) {
+            count++
+          }
+        }
+
+        if (count >= Math.ceil(arr.length / 2)) {
+          result = arr[i]
+          isOver = true
+          break
+        }
+      }
+
+      if (isOver) {
+        output.innerHTML = result
+      } else {
+        output.innerHTML = 'No'
+      }
     }
   </script>
 </body>

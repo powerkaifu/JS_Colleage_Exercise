@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>三數排序(陣列版)</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../css/bootstrap.css">
+  <link rel="stylesheet" href="../../css/layout.css">
+  <link rel="stylesheet" href="../../css/question.css">
+</head>
+
+<body>
+  <div class="container">
+    <h1 class="text-center">三數排序(陣列版)</h1>
+    <h2>題目</h2>
+    <p>輸入三個正整數 a b c，將 a b c 從小印到大。(不使用 array.sort())</p>
+
+    <hr>
+
+    <h2>輸入</h2>
+    數字1:<input id="input1" type="text" value="0"><br>
+    數字2:<input id="input2" type="text" value="0"><br>
+    數字3:<input id="input3" type="text" value="0"><br>
+    <br>
+    <button id="submit">送出</button>
+    <hr>
+
+    <h2>輸出</h2>
+    <div id="output"></div>
+  </div>
+
+  <script src="../../js/bootstrap.bundle.min.js"></script>
+  <script>
+    const submit = document.querySelector('#submit')
+    const output = document.querySelector('#output')
+    output.innerHTML = null
+
+    submit.addEventListener('click', clickHandler)
+    function clickHandler() {
+      const arr = []
+      let tmp = 0
+      let result = ''
+
+      let n1 = parseInt(input1.value)
+      let n2 = parseInt(input2.value)
+      let n3 = parseInt(input3.value)
+
+      arr.push(n1)
+      arr.push(n2)
+      arr.push(n3)
+
+      for (let i = 0; i < 2; i++) {
+        for (let j = 0; j < 2 - i; j++) {
+          if (arr[j] > arr[j + 1]) {
+            tmp = arr[j]
+            arr[j] = arr[j + 1]
+            arr[j + 1] = tmp
+          }
+        }
+      }
+
+      result = arr.join('&emsp;')
+
+      /*
+      for (let i = 0; i < arr.length; i++) {
+        result += arr[i] + '&emsp;'
+      }
+      */
+
+      output.innerHTML = result
+    }
+  </script>
+</body>
+
+</html>

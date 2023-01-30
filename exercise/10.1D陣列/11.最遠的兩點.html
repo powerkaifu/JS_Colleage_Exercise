@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>課後練習</title>
+  <title>最遠的兩點</title>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../../css/bootstrap.css">
   <link rel="stylesheet" href="../../css/layout.css">
@@ -14,9 +14,19 @@
 
 <body>
   <div class="container">
-    <h1 class="text-center"></h1>
+    <h1 class="text-center">最遠的兩點</h1>
     <h2>題目</h2>
-    <p></p>
+    <p>
+      問題描述 ：<br>
+      寫一個程式讀入各點座標，找出其中距離最遠的兩個點，輸出此兩點間距離的平方值。<br>
+      例如：若最遠的兩點座標分別為 1, -1 和 2, 3，因 (2-1)2+(3-(-1))2=1+16=17，故輸出17。<br><br>
+
+      輸入說明 ：<br>
+      第一行為一個正整數N，代表共有幾組測試資料。之後接下來有 N 行，每行中第一個為正整數 M（ 2 ≤ M ≤ 20 ），代表該組資料共有 M 個點，接下來有 2M 個整數，分別代表各頂點的 x 和 y 座標。<br><br>
+
+      輸出說明 ：<br>
+      每個測試資料結果輸出於一行。
+    </p>
 
     <hr>
 
@@ -38,7 +48,7 @@
     input1.addEventListener('change', changeHandler)
     function changeHandler() {
       let n = parseInt(input1.value)
-      let result = '';
+      let result = null;
 
       output.innerHTML = result
     }

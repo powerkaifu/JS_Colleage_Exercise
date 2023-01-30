@@ -14,9 +14,9 @@
 
 <body>
   <div class="container">
-    <h1 class="text-center">畫n層直角三角形</h1>
+    <h1 class="text-center">畫 n 層直角三角形</h1>
     <h2>題目</h2>
-    <p>輸入一整數n，用"*"畫出一個n層的直角三角形。</p>
+    <p>輸入一整數 n，用 ★ 畫出一個 n 層的直角三角形。</p>
 
     <hr>
 
@@ -40,6 +40,16 @@
       let n = parseInt(input1.value)
       let result = '';
 
+      for (let i = 1; i <= n; i++) {
+        for (let space = 1; space <= n - i; space++) {
+          result += '&emsp;'
+        }
+        for (let star = 1; star <= i; star++) {
+          if (star === 1) continue
+          result += '★'
+        }
+        result += '<br>'
+      }
       output.innerHTML = result
     }
   </script>

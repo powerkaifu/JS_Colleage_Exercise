@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>費式數列陣列</title>
+  <title>費式數列陣列版</title>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../../css/bootstrap.css">
   <link rel="stylesheet" href="../../css/layout.css">
@@ -14,14 +14,34 @@
 
 <body>
   <div class="container">
-    <h1 class="text-center">費式數列陣列</h1>
+    <h1 class="text-center">費式數列陣列版</h1>
     <h2>題目</h2>
-    <p>費式數列陣列：f(0)=0、f(1)=1、f(2)=f(1)+f(2)、f(x)=f(x-1)+f(x-2)， 輸入一整數n，輸出x = n~0 的 f(x) 的值。 n 的範圍為 1 ~ 90。</p>
+    <p>
+      費式數列陣列版：<br>
+      f(0)=0<br>
+      f(1)=1<br>
+      f(2)=f(1)+f(2)<br>
+      f(x)=f(x-1)+f(x-2)<br>
+      輸入一整數 n，輸出 x = n~0 的 f(x) 的值。<br><br>
+
+      例如:<br>
+      f(10)=55<br>
+      f(9)=34<br>
+      f(8)=21<br>
+      f(7)=13<br>
+      f(6)=8<br>
+      f(5)=5<br>
+      f(4)=3<br>
+      f(3)=2<br>
+      f(2)=1<br>
+      f(1)=1<br>
+      f(0)=0
+    </p>
 
     <hr>
 
     <h2>輸入</h2>
-    數字:<input id="input1" type="text" value="0"><br>
+    數字 n:<input id="input1" type="text" value="0"><br>
 
     <hr>
 
@@ -35,10 +55,24 @@
     const output = document.querySelector('#output')
     output.innerHTML = null
 
+
+
     input1.addEventListener('change', changeHandler)
     function changeHandler() {
+      let result = ''
       let n = parseInt(input1.value)
-      let result = null;
+
+      const f = []
+      f[0] = 0
+      f[1] = 1
+
+      for (let i = 2; i < n + 1; i++) {
+        f[i] = f[i - 2] + f[i - 1]
+      }
+
+      for (let i = f.length - 1; i >= 0; i--) {
+        result += `f(${i})=${f[i]}<br>`
+      }
 
       output.innerHTML = result
     }

@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>從一個陣列複製到另一個陣列</title>
+  <title>天干地支:西元年問天干地支</title>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../../css/bootstrap.css">
   <link rel="stylesheet" href="../../css/layout.css">
@@ -14,14 +14,18 @@
 
 <body>
   <div class="container">
-    <h1 class="text-center">從一個陣列複製到另一個陣列</h1>
+    <h1 class="text-center">天干地支:西元年問天干地支</h1>
     <h2>題目</h2>
-    <p>試撰寫程式碼，將array1中的數值複製到array2，其中變數 array1 和 array2 所參照的陣列，都各包含10個元素。</p>
+    <p>
+      已知西元 1024 年為 甲子年，輸入一個西元年份，輸出其天干地支的年別。<br>
+      T = ['甲', '乙', '丙', '丁', '戊', '己', '庚', '辛', '壬', '癸']<br>
+      D = ['子','丑', '寅', '卯', '辰', '巳', '午', '未', '申', '酉', '戌', '亥']
+    </p>
 
     <hr>
 
     <h2>輸入</h2>
-    數字:<input id="input1" type="text" value="0"><br>
+    年份:<input id="input1" type="text" value="0"><br>
 
     <hr>
 
@@ -33,13 +37,17 @@
   <script>
     const input1 = document.querySelector('#input1')
     const output = document.querySelector('#output')
+    const T = ['甲', '乙', '丙', '丁', '戊', '己', '庚', '辛', '壬', '癸']
+    const D = ['子', '丑', '寅', '卯', '辰', '巳', '午', '未', '申', '酉', '戌', '亥']
+
     output.innerHTML = null
 
     input1.addEventListener('change', changeHandler)
     function changeHandler() {
-      let n = parseInt(input1.value)
-      let result = null;
-
+      let year = parseInt(input1.value)
+      t = T[(year - 4) % 10]
+      d = D[(year - 4) % 12]
+      let result = '西元 ' + year + ' 為 ' + t + d + '年'
       output.innerHTML = result
     }
   </script>

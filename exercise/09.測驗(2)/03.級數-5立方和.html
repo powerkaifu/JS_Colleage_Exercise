@@ -16,7 +16,7 @@
   <div class="container">
     <h1 class="text-center">級數-5立方和</h1>
     <h2>題目</h2>
-    <p>輸入一整數n,輸出 1^5+2^5+3^5+...+n^5</p>
+    <p>輸入一整數 n ,輸出 1^5+2^5+3^5+...+n^5</p>
 
     <hr>
 
@@ -38,7 +38,10 @@
     input1.addEventListener('change', changeHandler)
     function changeHandler() {
       let n = parseInt(input1.value)
-      let result = '';
+      let result = 0;
+      for (let i = 1; i <= n; i++) {
+        result += i * i * i * i * i
+      }
 
       output.innerHTML = result
     }

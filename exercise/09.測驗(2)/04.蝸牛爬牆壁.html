@@ -19,22 +19,25 @@
     <p>
       資訊學院牆壁高 a 公尺，蝸牛從 b 公尺高的地方往上爬，白天可以往上爬 c 公尺，但是晚上睡著了會下降 d 公尺，請問蝸牛幾天後可以爬上屋頂。<br>
       輸入範例:<br><br>
-
-      43 2 6 3<br><br>
-
+      43 2 6 3<br>
       輸出範例:<br>
-      Please enter the height of the building wall(請輸入建築物牆壁高度(公尺))<br>
-      Please enter the initial height of the snail(請輸入蝸牛初始高度(公尺))<br>
-      Please enter the daytime ascent height of the snail(請輸入蝸牛白天上升高度(公尺))<br>
-      Please enter the descending height of the snail at night(請輸入蝸牛晚上下降高度(公尺))<br>
-      Snails can climb up to the roof after 13 days(蝸牛13天後可爬上屋頂)
+      13<br><br>
+
+      輸入範例:<br>
+      95 3 4 2<br>
+      輸出範例:<br>
+      45
     </p>
 
     <hr>
 
     <h2>輸入</h2>
-    數字:<input id="input1" type="text" value="0"><br>
-
+    請輸入建築物牆壁高度(公尺):<input id="input1" type="text" value="0"><br>
+    請輸入蝸牛初始高度(公尺):<input id="input2" type="text" value="0"><br>
+    請輸入蝸牛白天上升高度(公尺):<input id="input3" type="text" value="0"><br>
+    請輸入蝸牛晚上下降高度(公尺):<input id="input4" type="text" value="0"><br>
+    <br>
+    <button id="submit">送出</button>
     <hr>
 
     <h2>輸出</h2>
@@ -44,15 +47,30 @@
   <script src="../../js/bootstrap.bundle.min.js"></script>
   <script>
     const input1 = document.querySelector('#input1')
+    const input2 = document.querySelector('#input2')
+    const input3 = document.querySelector('#input3')
+    const input4 = document.querySelector('#input4')
     const output = document.querySelector('#output')
+    const submit = document.querySelector('#submit')
     output.innerHTML = null
 
-    input1.addEventListener('change', changeHandler)
-    function changeHandler() {
-      let n = parseInt(input1.value)
-      let result = '';
+    submit.addEventListener('click', clickHandler)
+    function clickHandler() {
+      let wallHeight = parseInt(input1.value)
+      let snailHeight = parseInt(input2.value)
+      let dayClimb = parseInt(input3.value)
+      let nightClimb = parseInt(input4.value)
+      let total = wallHeight - snailHeight
+      let countDay = 0;
 
-      output.innerHTML = result
+      while (true) {
+        countDay++
+        total = total - dayClimb
+        if (total <= 0) break
+        total = total + nightClimb
+      }
+
+      output.innerHTML = countDay
     }
   </script>
 </body>

@@ -17,7 +17,7 @@
     <h1 class="text-center">費式數列</h1>
     <h2>題目</h2>
     <p>
-      費氏數列定義如下 f(0)=0, f(1)=1, f(n)=f(n-1)+f(n-2);請從螢幕輸入一個正整數n，輸出第n 個費式數列的值。<br>
+      費氏數列定義如下 f(0)=0, f(1)=1, f(n)=f(n-1)+f(n-2);請從螢幕輸入一個正整數 n，輸出第 n 個費式數列的值。<br>
       以下是從第0個費式數列開始的範例:<br><br>
 
       0 1 1 2 3 5 8 13 21 34 ...<br><br>
@@ -52,8 +52,17 @@
     input1.addEventListener('change', changeHandler)
     function changeHandler() {
       let n = parseInt(input1.value)
-      let result = '';
+      let x1 = 0
+      let x2 = 1
+      let tmp = 0
 
+      for (let i = 2; i <= n; i++) {
+        tmp = x1 + x2
+        x1 = x2
+        x2 = tmp
+      }
+
+      let result = x2
       output.innerHTML = result
     }
   </script>
